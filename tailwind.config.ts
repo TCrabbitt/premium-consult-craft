@@ -63,17 +63,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated consulting color palette to focus on green, blue and white
-				consulting: {
-					'dark-blue': '#0A2342', // Deep navy blue - primary dark
-					'blue': '#126E82', // Medium blue
-					'light-blue': '#5ADBFF', // Light blue accent
-					'green': '#3CAA6E', // Professional green
-					'light-green': '#8FD9A8', // Light green accent
+				// Updated Hallmark color palette based on the logo
+				hallmark: {
+					'dark-blue': '#1A5190', // Deep blue from logo
+					'blue': '#2E7BC4', // Medium blue from logo
+					'light-blue': '#5AABFF', // Light blue from logo
+					'dark-green': '#0E6B50', // Dark green from logo
+					'green': '#1E9971', // Mid green from logo
+					'light-green': '#68DA9E', // Light green from logo
 					'white': '#FFFFFF', // Pure white
 					'off-white': '#F7FBFC', // Soft white background
-					'neutral-gray': '#8E9196', // Neutral gray for text
+					'dark': '#131A20', // Near black for text
+					'neutral-gray': '#717880', // Neutral gray for text
 				}
+			},
+			backgroundImage: {
+				'gradient-dots': "url('/hallmark-pattern-bg.png')",
+				'hero-gradient': 'linear-gradient(130deg, #0E6B50 0%, #1A5190 100%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -106,7 +112,10 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				display: ['Playfair Display', 'serif']
+				display: ['Montserrat', 'sans-serif']
+			},
+			boxShadow: {
+				'premium': '0px 10px 30px rgba(0, 0, 0, 0.08)'
 			}
 		}
 	},

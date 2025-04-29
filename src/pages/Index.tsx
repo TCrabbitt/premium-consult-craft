@@ -39,7 +39,7 @@ const Index = () => {
       <Navbar />
       
       {/* Main Content */}
-      <main>
+      <main className="flex-grow">
         <Hero />
         
         <div className="reveal">
