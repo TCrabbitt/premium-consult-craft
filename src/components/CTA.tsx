@@ -21,7 +21,7 @@ const CTA = () => {
               Schedule a Consultation
               <ArrowRight size={16} />
             </Button>
-            <Button variant="outline" className="text-white border-white hover:bg-white/10" size="lg">
+            <Button variant="outline" className="text-black border-white hover:bg-white/10" size="lg">
               Learn About Our Process
             </Button>
           </div>

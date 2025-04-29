@@ -23,7 +23,7 @@ const Hero = () => {
                 Get Started
                 <ArrowRight size={16} />
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/10" size="lg">
+              <Button variant="outline" className="border-white text-black hover:bg-white/10" size="lg">
                 Learn More
               </Button>
             </div>
