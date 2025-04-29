@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, Calendar, Users, Award, Heart, Briefcase } from "lucide-react";
+import { ArrowRight, Linkedin, Calendar, Users, Award, Heart, Briefcase, BookOpen, FileText, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -23,6 +22,15 @@ interface GalleryImage {
   category: 'event' | 'celebration' | 'office';
 }
 
+// Blog post type definition
+interface BlogPost {
+  title: string;
+  excerpt: string;
+  image: string;
+  category: string;
+  date: string;
+}
+
 const AboutPage = () => {
   // Sample team data - replace with your actual team
   const teamMembers: TeamMember[] = [
@@ -30,40 +38,65 @@ const AboutPage = () => {
       name: "Sarah Johnson",
       position: "CEO & Founder",
       bio: "With over 15 years in HR consulting, Sarah founded Hallmark to revolutionize how businesses approach talent management.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
       linkedin: "https://linkedin.com/",
     },
     {
       name: "Michael Chen",
       position: "Head of Operations",
       bio: "Michael brings a decade of operational excellence to ensure our clients receive seamless service delivery.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a",
       linkedin: "https://linkedin.com/",
     },
     {
       name: "Priya Patel",
       position: "Lead HR Consultant",
       bio: "Priya's expertise in strategic HR planning has helped dozens of companies transform their talent acquisition processes.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956",
       linkedin: "https://linkedin.com/",
     },
     {
       name: "James Wilson",
       position: "Technology Director",
       bio: "James leads our technical innovations, ensuring our solutions leverage the latest in HR technology.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
       linkedin: "https://linkedin.com/",
     },
   ];
 
-  // Sample gallery images - replace with your actual images
+  // Sample gallery images with real Unsplash images
   const galleryImages: GalleryImage[] = [
-    { src: "/placeholder.svg", alt: "Annual Team Retreat", category: 'event' },
-    { src: "/placeholder.svg", alt: "Office Celebration", category: 'celebration' },
-    { src: "/placeholder.svg", alt: "Client Workshop", category: 'event' },
-    { src: "/placeholder.svg", alt: "Team Building Day", category: 'celebration' },
-    { src: "/placeholder.svg", alt: "Awards Ceremony", category: 'celebration' },
-    { src: "/placeholder.svg", alt: "Office Environment", category: 'office' },
+    { src: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa", alt: "Annual Team Retreat", category: 'event' },
+    { src: "https://images.unsplash.com/photo-1556761175-4b46a572b786", alt: "Office Celebration", category: 'celebration' },
+    { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c", alt: "Client Workshop", category: 'event' },
+    { src: "https://images.unsplash.com/photo-1543269865-cbf427effbad", alt: "Team Building Day", category: 'celebration' },
+    { src: "https://images.unsplash.com/photo-1560439513-74b037a25d84", alt: "Awards Ceremony", category: 'celebration' },
+    { src: "https://images.unsplash.com/photo-1497215842964-222b430dc094", alt: "Office Environment", category: 'office' },
+  ];
+  
+  // Sample blog posts
+  const blogPosts: BlogPost[] = [
+    {
+      title: "The Evolution of HR Consulting in the Digital Age",
+      excerpt: "How modern HR practices are leveraging technology to drive employee engagement and business performance.",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      category: "Industry Trends",
+      date: "April 10, 2023"
+    },
+    {
+      title: "Building Resilient Teams in Uncertain Times",
+      excerpt: "Strategies to help organizations develop adaptable workforces that thrive through change and disruption.",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
+      category: "Leadership",
+      date: "March 15, 2023"
+    },
+    {
+      title: "The ROI of Employee Experience: Beyond Engagement",
+      excerpt: "Measuring the business impact of investing in comprehensive employee experience initiatives.",
+      image: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a",
+      category: "Research & Analysis",
+      date: "February 22, 2023"
+    }
   ];
 
   // State for gallery filter
@@ -80,8 +113,15 @@ const AboutPage = () => {
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue text-white py-16 md:py-20">
-          <div className="container mx-auto px-6">
+        <section className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue text-white py-16 md:py-20 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-15">
+            <img 
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" 
+              alt="About Us Background" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">About Hallmark</h1>
               <p className="text-lg md:text-xl opacity-90 mb-6">
@@ -107,9 +147,9 @@ const AboutPage = () => {
                   Our mission is to empower organizations with the strategies, tools, and insights needed to build and maintain exceptional teams that drive business success.
                 </p>
               </div>
-              <div className="bg-hallmark-off-white p-8 rounded-lg shadow-premium">
+              <div className="bg-hallmark-off-white p-8 rounded-lg shadow-premium overflow-hidden">
                 <div className="flex items-center justify-center h-full">
-                  <img src="/placeholder.svg" alt="Hallmark Team" className="rounded-lg max-h-80 object-cover" />
+                  <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c" alt="Hallmark Team" className="rounded-lg max-h-80 object-cover w-full transition-transform duration-500 hover:scale-105" />
                 </div>
               </div>
             </div>
@@ -152,20 +192,39 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Why The Brand Exists Section */}
+        {/* Why The Brand Exists & Our Purpose Section - Enhanced */}
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="order-2 md:order-1">
-                <div className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue p-1 rounded-lg">
-                  <div className="bg-white p-8 rounded-lg">
-                    <h3 className="text-2xl font-semibold mb-4 text-hallmark-dark-blue">Our Purpose</h3>
-                    <p className="text-gray-700 mb-6">
-                      We exist to bridge the gap between traditional HR practices and the evolving needs of modern businesses.
-                    </p>
-                    <p className="text-gray-700">
-                      Through our services, we aim to create workplaces where both businesses and their employees can thrive together, driving mutual growth and success.
-                    </p>
+                <div className="relative">
+                  <div className="absolute -top-8 -left-8 w-24 h-24 rounded-full bg-hallmark-light-green/30 z-0"></div>
+                  <div className="absolute -bottom-8 -right-8 w-16 h-16 rounded-full bg-hallmark-light-blue/20 z-0"></div>
+                  
+                  <div className="bg-white shadow-premium rounded-lg p-8 z-10 relative">
+                    <div className="flex items-center mb-6">
+                      <div className="w-10 h-10 rounded-full bg-hallmark-light-blue/20 flex items-center justify-center mr-4">
+                        <Heart size={20} className="text-hallmark-blue" />
+                      </div>
+                      <h3 className="text-2xl font-semibold text-hallmark-dark-blue">Our Purpose</h3>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <p className="text-gray-700">
+                        We exist to bridge the gap between traditional HR practices and the evolving needs of modern businesses.
+                      </p>
+                      <p className="text-gray-700">
+                        Through our services, we aim to create workplaces where both businesses and their employees can thrive together, driving mutual growth and success.
+                      </p>
+                      <div className="pt-2">
+                        <div className="h-1 w-20 bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue rounded-full"></div>
+                      </div>
+                      <div className="flex flex-wrap gap-3 pt-2">
+                        <span className="bg-hallmark-light-green/20 text-hallmark-green px-3 py-1 rounded-full text-sm">Innovation</span>
+                        <span className="bg-hallmark-light-blue/20 text-hallmark-blue px-3 py-1 rounded-full text-sm">Transformation</span>
+                        <span className="bg-hallmark-light-green/20 text-hallmark-green px-3 py-1 rounded-full text-sm">Excellence</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -174,9 +233,14 @@ const AboutPage = () => {
                 <p className="text-gray-700 mb-6">
                   We recognized that many organizations struggle with outdated HR approaches that fail to address the realities of today's workplace dynamics and talent expectations. 
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-700 mb-6">
                   Hallmark was created to provide forward-thinking solutions that not only solve immediate HR challenges but position companies for sustainable future success in an increasingly competitive talent marketplace.
                 </p>
+                <div className="flex items-center p-4 bg-hallmark-light-blue/10 rounded-lg border-l-4 border-hallmark-blue">
+                  <blockquote className="italic text-gray-700">
+                    "We don't just solve today's HR problems—we build capabilities that prevent tomorrow's challenges from occurring."
+                  </blockquote>
+                </div>
               </div>
             </div>
           </div>
@@ -233,8 +297,14 @@ const AboutPage = () => {
             <h2 className="text-3xl font-display font-bold mb-8 text-hallmark-dark text-center">Our Team</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {teamMembers.map((member, index) => (
-                <div key={index} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-premium hover:shadow-xl transition-shadow duration-300">
-                  <img src={member.image} alt={member.name} className="w-full h-56 object-cover" />
+                <div key={index} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-premium hover:shadow-xl transition-all duration-300">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                    />
+                  </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                     <p className="text-hallmark-blue mb-3">{member.position}</p>
@@ -310,8 +380,8 @@ const AboutPage = () => {
             {/* Gallery Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {filteredImages.map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-lg shadow-premium hover:shadow-xl transition-all duration-300 group">
-                  <div className="relative h-64">
+                <div key={index} className="overflow-hidden rounded-lg shadow-premium hover:shadow-xl transition-all duration-300 group h-64">
+                  <div className="relative h-full">
                     <img 
                       src={image.src} 
                       alt={image.alt} 
@@ -327,14 +397,44 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Blogs & Insights Section */}
+        {/* Blogs & Insights Section - New Implementation */}
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark">Blogs & Insights</h2>
-              <p className="text-gray-700 mb-8">
-                Explore our latest thinking on HR trends, leadership development, and workplace innovation.
-              </p>
+            <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark text-center">Blogs & Insights</h2>
+            <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10">
+              Explore our latest thinking on HR trends, leadership development, and workplace innovation.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-10">
+              {blogPosts.map((post, index) => (
+                <div key={index} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-premium hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                    />
+                  </div>
+                  <div className="p-6 flex-grow">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <span className="bg-hallmark-light-blue/20 text-hallmark-blue px-2 py-1 rounded-full text-xs">{post.category}</span>
+                      <span className="mx-2">•</span>
+                      <span>{post.date}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-hallmark-dark">{post.title}</h3>
+                    <p className="text-gray-700 mb-4">{post.excerpt}</p>
+                  </div>
+                  <div className="px-6 pb-6">
+                    <Link to="/blog" className="inline-flex items-center text-hallmark-dark-blue font-medium hover:text-hallmark-blue transition-colors">
+                      <span className="mr-2">Read More</span>
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center">
               <Link to="/blog" className="inline-flex items-center px-6 py-3 bg-hallmark-dark-green text-white rounded hover:bg-hallmark-green transition-colors">
                 <span className="mr-2">Visit Our Blog</span>
                 <ArrowRight size={18} />

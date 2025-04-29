@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, ChevronDown, ChevronUp, FileSearch, Briefcase, Users, Award } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, ChevronUp, FileSearch, Briefcase, Users, Award, BookOpen, FileText, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from '@/components/Navbar';
@@ -20,6 +20,16 @@ interface CaseStudy {
   solution: string;
   results: string[];
   industry: string;
+  image: string;
+}
+
+// Blog post type definition
+interface BlogPost {
+  title: string;
+  excerpt: string;
+  image: string;
+  category: string;
+  date: string;
 }
 
 const SolutionsPage = () => {
@@ -55,7 +65,7 @@ const SolutionsPage = () => {
     },
   ];
 
-  // Sample case studies
+  // Sample case studies with added images
   const caseStudies: CaseStudy[] = [
     {
       title: "Global Tech Company Reduces Time-to-Hire by 40%",
@@ -66,7 +76,8 @@ const SolutionsPage = () => {
         "Increased quality-of-hire metrics by 25%",
         "Improved candidate experience ratings by 35%"
       ],
-      industry: "Technology"
+      industry: "Technology",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
     },
     {
       title: "Healthcare Provider Reduces Turnover by 30%",
@@ -77,8 +88,46 @@ const SolutionsPage = () => {
         "Saved $3.2M in annual replacement costs",
         "Increased employee satisfaction scores by 42%"
       ],
-      industry: "Healthcare"
+      industry: "Healthcare",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
     },
+    {
+      title: "Manufacturing Firm Improves Leadership Pipeline by 60%",
+      problem: "A leading manufacturing company struggled with succession planning, facing potential leadership gaps due to upcoming retirements.",
+      solution: "We developed a structured leadership assessment program and implemented tailored development plans for high-potential employees.",
+      results: [
+        "Built a leadership pipeline covering 85% of critical roles",
+        "Reduced external executive hires by 40%",
+        "Improved leadership effectiveness scores by 28%"
+      ],
+      industry: "Manufacturing",
+      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
+    }
+  ];
+
+  // Sample blog posts
+  const blogPosts: BlogPost[] = [
+    {
+      title: "The Future of Work: Navigating Remote and Hybrid Models",
+      excerpt: "Explore how leading organizations are adapting their HR strategies to support distributed teams while maintaining culture and productivity.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      category: "Workplace Trends",
+      date: "April 15, 2023"
+    },
+    {
+      title: "AI in HR: Beyond the Recruitment Funnel",
+      excerpt: "Discover how artificial intelligence is transforming all areas of HR from performance management to employee engagement.",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      category: "Technology",
+      date: "March 22, 2023"
+    },
+    {
+      title: "Building an Inclusive Hiring Process: A Step-by-Step Guide",
+      excerpt: "Learn practical strategies to remove bias from your recruitment process and build more diverse teams.",
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+      category: "Diversity & Inclusion",
+      date: "February 8, 2023"
+    }
   ];
 
   return (
@@ -87,16 +136,32 @@ const SolutionsPage = () => {
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue text-white py-16 md:py-20">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">HR Solutions That Transform Business</h1>
-              <p className="text-lg md:text-xl opacity-90 mb-6">
-                Strategic consulting services that optimize your workforce and drive measurable business outcomes.
-              </p>
-              <Button className="bg-white text-hallmark-dark-blue hover:bg-white/90">
-                Explore Our Approach
-              </Button>
+        <section className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue text-white py-16 md:py-20 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <img 
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" 
+              alt="HR Solutions Background" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">HR Solutions That Transform Business</h1>
+                <p className="text-lg md:text-xl opacity-90 mb-6">
+                  Strategic consulting services that optimize your workforce and drive measurable business outcomes.
+                </p>
+                <Button className="bg-white text-hallmark-dark-blue hover:bg-white/90">
+                  Explore Our Approach
+                </Button>
+              </div>
+              <div className="hidden md:block">
+                <img 
+                  src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
+                  alt="Data-driven HR Solutions" 
+                  className="rounded-lg shadow-xl max-h-80 object-cover w-full"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -139,7 +204,7 @@ const SolutionsPage = () => {
               </div>
               <div className="bg-hallmark-off-white p-8 rounded-lg shadow-premium">
                 <div className="flex items-center justify-center h-full">
-                  <img src="/placeholder.svg" alt="HR Challenges" className="rounded-lg max-h-80 object-cover" />
+                  <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334" alt="HR Challenges" className="rounded-lg max-h-80 object-cover w-full" />
                 </div>
               </div>
             </div>
@@ -344,7 +409,13 @@ const SolutionsPage = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="order-2 md:order-1">
                 <div className="bg-gradient-to-br from-hallmark-dark-green to-hallmark-dark-blue p-8 rounded-lg text-white relative overflow-hidden">
-                  <div className="absolute inset-0 dot-pattern"></div>
+                  <div className="absolute inset-0 opacity-10">
+                    <img 
+                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
+                      alt="Background Pattern" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div className="relative z-10">
                     <h3 className="text-2xl font-semibold mb-6">Why clients choose us:</h3>
                     <ul className="space-y-4">
@@ -487,6 +558,60 @@ const SolutionsPage = () => {
           </div>
         </section>
 
+        {/* Problem & Solution Showcase - Enhanced Section */}
+        <section className="py-12 md:py-16 bg-hallmark-off-white">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark text-center">Problem & Solution Showcase</h2>
+            <p className="text-center text-gray-700 max-w-3xl mx-auto mb-10">
+              Real-world examples of how our strategic HR solutions have transformed organizations across industries.
+            </p>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {caseStudies.map((study, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-premium overflow-hidden border border-gray-100 h-full flex flex-col hover:shadow-xl transition-all duration-300">
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={study.image} 
+                      alt={study.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                    />
+                  </div>
+                  <div className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue p-4 text-white">
+                    <span className="text-sm uppercase tracking-wider text-hallmark-light-blue/80">{study.industry}</span>
+                    <h3 className="text-xl font-semibold mt-1">{study.title}</h3>
+                  </div>
+                  <div className="p-6 flex-grow">
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-hallmark-dark-blue mb-2">The Challenge</h4>
+                      <p className="text-gray-700">{study.problem}</p>
+                    </div>
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-hallmark-green mb-2">Our Solution</h4>
+                      <p className="text-gray-700">{study.solution}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-hallmark-dark mb-2">Results</h4>
+                      <ul className="space-y-2">
+                        {study.results.map((result, i) => (
+                          <li key={i} className="flex items-center">
+                            <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                            <span className="text-gray-700">{result}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-hallmark-off-white border-t border-gray-100">
+                    <Button variant="outline" className="w-full border-hallmark-dark-blue text-hallmark-dark-blue hover:bg-hallmark-dark-blue hover:text-white">
+                      Read Full Case Study
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQs Section */}
         <section className="py-12 md:py-16 bg-hallmark-off-white">
           <div className="container mx-auto px-6">
@@ -527,55 +652,46 @@ const SolutionsPage = () => {
           </div>
         </section>
 
-        {/* Case Studies Section */}
+        {/* Blogs & Insights Section - New Implementation */}
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-display font-bold mb-8 text-hallmark-dark text-center">Problem & Solution Showcase</h2>
+            <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark text-center">Blogs & Insights</h2>
+            <p className="text-center text-gray-700 max-w-3xl mx-auto mb-10">
+              Explore our latest thinking on HR trends, organizational design, and workforce strategies.
+            </p>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              {caseStudies.map((study, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-premium overflow-hidden border border-gray-100">
-                  <div className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue p-6 text-white">
-                    <span className="text-sm uppercase tracking-wider text-hallmark-light-blue/80">{study.industry}</span>
-                    <h3 className="text-xl font-semibold mt-1">{study.title}</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+              {blogPosts.map((post, index) => (
+                <div key={index} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-premium hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                    />
                   </div>
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-hallmark-dark-blue mb-2">The Challenge</h4>
-                      <p className="text-gray-700">{study.problem}</p>
+                  <div className="p-6 flex-grow">
+                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <span className="bg-hallmark-light-blue/20 text-hallmark-blue px-2 py-1 rounded-full text-xs">{post.category}</span>
+                      <span className="mx-2">•</span>
+                      <span>{post.date}</span>
                     </div>
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-hallmark-green mb-2">Our Solution</h4>
-                      <p className="text-gray-700">{study.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-hallmark-dark mb-2">Results</h4>
-                      <ul className="space-y-2">
-                        {study.results.map((result, i) => (
-                          <li key={i} className="flex items-center">
-                            <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
-                            <span className="text-gray-700">{result}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-hallmark-dark">{post.title}</h3>
+                    <p className="text-gray-700 mb-4">{post.excerpt}</p>
+                  </div>
+                  <div className="px-6 pb-6">
+                    <Link to="/blog" className="inline-flex items-center text-hallmark-dark-blue font-medium hover:text-hallmark-blue transition-colors">
+                      <span className="mr-2">Read More</span>
+                      <ArrowRight size={16} />
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Blogs & Insights Section */}
-        <section className="py-12 md:py-16 bg-hallmark-off-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark">Blogs & Insights</h2>
-              <p className="text-gray-700 mb-8">
-                Explore our latest thinking on HR trends, organizational design, and workforce strategies.
-              </p>
+            
+            <div className="text-center">
               <Link to="/blog" className="inline-flex items-center px-6 py-3 bg-hallmark-dark-green text-white rounded hover:bg-hallmark-green transition-colors">
-                <span className="mr-2">Read Our Insights</span>
+                <span className="mr-2">View All Insights</span>
                 <ArrowRight size={18} />
               </Link>
             </div>
