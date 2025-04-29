@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, ChevronDown, ChevronUp, FileSearch, Briefcase, Users, Award, Chart } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, ChevronUp, FileSearch, Briefcase, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from '@/components/Navbar';
@@ -279,7 +278,7 @@ const SolutionsPage = () => {
               <Card className="shadow-premium hover:shadow-xl transition-all duration-300 border-t-4 border-t-hallmark-blue">
                 <CardHeader>
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-hallmark-light-blue/20 mb-4">
-                    <Chart size={24} className="text-hallmark-blue" />
+                    <FileSearch size={24} className="text-hallmark-blue" />
                   </div>
                   <CardTitle>Workforce Analytics</CardTitle>
                   <CardDescription>Data-driven HR decisions</CardDescription>
