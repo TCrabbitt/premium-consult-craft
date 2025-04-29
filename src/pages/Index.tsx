@@ -43,7 +43,7 @@ const Index = () => {
         <Hero />
         
         <div className="reveal">
-          {/* <WhoWeAre /> */}
+          <WhoWeAre />
         </div>
         
         <div className="reveal">

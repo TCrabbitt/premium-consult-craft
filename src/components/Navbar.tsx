@@ -40,9 +40,8 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/#solutions" className="nav-link">Solutions</Link>
-          <Link to="/#industries" className="nav-link">Industries</Link>
-          <Link to="/#about" className="nav-link">About Us</Link>
+          <Link to="/solutions" className="nav-link">Solutions</Link>
+          <Link to="/about" className="nav-link">About Us</Link>
           <Link to="/#contact" className="nav-link">Contact</Link>
           <Link to="/#contact">
             <Button variant="outline" className="ml-2 border-hallmark-dark-green text-hallmark-dark-green hover:bg-hallmark-dark-green hover:text-white">
@@ -68,9 +67,8 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-          <Link to="/#solutions" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
-          <Link to="/#industries" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
-          <Link to="/#about" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/solutions" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
+          <Link to="/about" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
           <Link to="/#contact" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
           <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
             <Button className="w-full mt-2 bg-hallmark-dark-green text-white">
