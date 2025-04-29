@@ -75,7 +75,7 @@
   }
 
   body {
-    @apply bg-white text-consulting-dark-purple font-sans;
+    @apply bg-white text-consulting-dark-blue font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -105,11 +105,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-consulting-dark-purple text-white py-3 px-6 rounded-md font-medium transition-all hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-consulting-light-purple;
+    @apply bg-consulting-green text-white py-3 px-6 rounded-md font-medium transition-all hover:shadow-lg hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-consulting-light-green;
   }
   
   .btn-secondary {
-    @apply bg-transparent border border-consulting-dark-purple text-consulting-dark-purple py-3 px-6 rounded-md font-medium transition-all hover:bg-consulting-dark-purple hover:text-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-consulting-light-purple;
+    @apply bg-transparent border border-consulting-blue text-consulting-blue py-3 px-6 rounded-md font-medium transition-all hover:bg-consulting-blue hover:text-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-consulting-light-blue;
   }
 
   .card {
@@ -117,6 +117,18 @@
   }
 
   .nav-link {
-    @apply relative text-consulting-dark-purple text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-consulting-light-purple after:transition-all hover:text-consulting-dark-purple/90 hover:after:w-full;
+    @apply relative text-consulting-dark-blue text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-consulting-light-green after:transition-all hover:text-consulting-blue hover:after:w-full;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-medium mb-4 text-consulting-dark-blue;
+  }
+  
+  .section-subtitle {
+    @apply text-consulting-neutral-gray max-w-2xl mx-auto mb-12;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-consulting-off-white to-white;
   }
 }

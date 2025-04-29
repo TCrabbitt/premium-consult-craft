@@ -63,12 +63,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for our premium consulting site
+				// Updated consulting color palette to focus on green, blue and white
 				consulting: {
-					'dark-purple': '#1A1F2C',
-					'neutral-gray': '#8E9196',
-					'soft-gray': '#F1F0FB',
-					'light-purple': '#D6BCFA',
+					'dark-blue': '#0A2342', // Deep navy blue - primary dark
+					'blue': '#126E82', // Medium blue
+					'light-blue': '#5ADBFF', // Light blue accent
+					'green': '#3CAA6E', // Professional green
+					'light-green': '#8FD9A8', // Light green accent
+					'white': '#FFFFFF', // Pure white
+					'off-white': '#F7FBFC', // Soft white background
+					'neutral-gray': '#8E9196', // Neutral gray for text
 				}
 			},
 			borderRadius: {

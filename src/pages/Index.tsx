@@ -2,7 +2,10 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Services from '@/components/Services';
+import WhoWeAre from '@/components/WhoWeAre';
+import Stats from '@/components/Stats';
+import RecruiterSolutions from '@/components/RecruiterSolutions';
+import CandidateSolutions from '@/components/CandidateSolutions';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
 import Contact from '@/components/Contact';
@@ -40,7 +43,19 @@ const Index = () => {
         <Hero />
         
         <div className="reveal">
-          <Services />
+          <WhoWeAre />
+        </div>
+        
+        <div className="reveal">
+          <Stats />
+        </div>
+        
+        <div className="reveal">
+          <RecruiterSolutions />
+        </div>
+        
+        <div className="reveal">
+          <CandidateSolutions />
         </div>
         
         <div className="reveal">
