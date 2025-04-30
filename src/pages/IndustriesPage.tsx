@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { 
   Briefcase, 
   Building, 
-  Industry, 
+  Factory, 
   Users, 
-  FileChart, 
+  FileText, 
   FileSearch, 
   TrendingUp,
   Handshake, 
@@ -43,7 +43,7 @@ const IndustriesPage = () => {
     },
     healthcare: {
       title: "Healthcare & Life Sciences",
-      icon: <FileChart className="h-6 w-6 text-hallmark-green" />,
+      icon: <FileText className="h-6 w-6 text-hallmark-green" />,
       description: "Staffing solutions for healthcare providers, pharmaceutical companies, and research institutions to meet critical patient care and innovation needs.",
       roles: [
         "Registered Nurses", "Medical Technologists", "Clinical Research Associates", 
@@ -71,7 +71,7 @@ const IndustriesPage = () => {
     },
     manufacturing: {
       title: "Manufacturing & Engineering",
-      icon: <Industry className="h-6 w-6 text-hallmark-dark-green" />,
+      icon: <Factory className="h-6 w-6 text-hallmark-dark-green" />,
       description: "Connecting skilled workers and engineers with leading manufacturers across automotive, aerospace, electronics, and industrial production.",
       roles: [
         "Process Engineers", "Quality Control Specialists", "Production Supervisors", 
@@ -317,7 +317,7 @@ const IndustriesPage = () => {
               <Card className="bg-white shadow-premium border-0">
                 <CardHeader className="pb-2">
                   <div className="w-12 h-12 rounded-full bg-hallmark-dark-green/20 flex items-center justify-center mb-4">
-                    <FileChart className="h-6 w-6 text-hallmark-dark-green" />
+                    <FileText className="h-6 w-6 text-hallmark-dark-green" />
                   </div>
                   <CardTitle className="text-xl text-hallmark-dark-green">Analyze</CardTitle>
                 </CardHeader>
