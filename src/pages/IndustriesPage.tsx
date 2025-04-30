@@ -390,7 +390,7 @@ const IndustriesPage = () => {
               <Card className="bg-white shadow-premium border-0 h-full">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-hallmark-light-blue/20 flex items-center justify-center mb-4">
-                    <Industry className="h-6 w-6 text-hallmark-blue" />
+                    <Factory className="h-6 w-6 text-hallmark-blue" />
                   </div>
                   <CardTitle className="text-xl text-hallmark-dark-green">Industry Immersion</CardTitle>
                 </CardHeader>
