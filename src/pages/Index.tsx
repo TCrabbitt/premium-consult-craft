@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import WhoWeAre from '@/components/WhoWeAre';
 import Stats from '@/components/Stats';
 import RecruiterSolutions from '@/components/RecruiterSolutions';
+import GlobalSolutions from '@/components/GlobalSolutions';
 import CandidateSolutions from '@/components/CandidateSolutions';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
@@ -52,6 +53,10 @@ const Index = () => {
         
         <div className="reveal">
           <RecruiterSolutions />
+        </div>
+        
+        <div className="reveal">
+          <GlobalSolutions />
         </div>
         
         <div className="reveal">
