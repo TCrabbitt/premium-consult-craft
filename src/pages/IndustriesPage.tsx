@@ -10,7 +10,12 @@ import {
   FileSearch, 
   TrendingUp,
   Handshake, 
-  Database
+  Database,
+  Code,
+  Server,
+  Shield,
+  Cloud,
+  Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -33,69 +38,119 @@ const IndustriesPage = () => {
       icon: <Database className="h-6 w-6 text-hallmark-blue" />,
       description: "Connecting top tech talent with innovative companies across software development, cybersecurity, data science, and IT infrastructure.",
       roles: [
-        "Software Engineers", "Data Scientists", "Cloud Architects", "Cybersecurity Specialists", 
-        "DevOps Engineers", "Product Managers", "UX/UI Designers"
+        { name: "Software Engineers", icon: <Code className="h-4 w-4" /> }, 
+        { name: "Data Scientists", icon: <Database className="h-4 w-4" /> }, 
+        { name: "Cloud Architects", icon: <Cloud className="h-4 w-4" /> }, 
+        { name: "Cybersecurity Specialists", icon: <Shield className="h-4 w-4" /> },
+        { name: "DevOps Engineers", icon: <Server className="h-4 w-4" /> }, 
+        { name: "Product Managers", icon: <Briefcase className="h-4 w-4" /> }, 
+        { name: "UX/UI Designers", icon: <Users className="h-4 w-4" /> }
       ],
       seniorRoles: [
-        "CTO", "CIO", "VP of Engineering", "Director of IT", "Head of Product", "Principal Architect"
+        { name: "CTO", icon: <Database className="h-4 w-4" /> },
+        { name: "CIO", icon: <Globe className="h-4 w-4" /> },
+        { name: "VP of Engineering", icon: <Code className="h-4 w-4" /> },
+        { name: "Director of IT", icon: <Server className="h-4 w-4" /> },
+        { name: "Head of Product", icon: <Briefcase className="h-4 w-4" /> },
+        { name: "Principal Architect", icon: <Cloud className="h-4 w-4" /> }
       ],
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1200"
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1200",
+      bgColor: "from-blue-50 to-cyan-50",
+      accentColor: "border-l-hallmark-blue"
     },
     healthcare: {
       title: "Healthcare & Life Sciences",
       icon: <FileText className="h-6 w-6 text-hallmark-green" />,
       description: "Staffing solutions for healthcare providers, pharmaceutical companies, and research institutions to meet critical patient care and innovation needs.",
       roles: [
-        "Registered Nurses", "Medical Technologists", "Clinical Research Associates", 
-        "Healthcare Administrators", "Medical Coders", "Pharmacy Technicians"
+        { name: "Registered Nurses", icon: <Users className="h-4 w-4" /> }, 
+        { name: "Medical Technologists", icon: <FileText className="h-4 w-4" /> }, 
+        { name: "Clinical Research Associates", icon: <FileSearch className="h-4 w-4" /> }, 
+        { name: "Healthcare Administrators", icon: <Building className="h-4 w-4" /> }, 
+        { name: "Medical Coders", icon: <Code className="h-4 w-4" /> }, 
+        { name: "Pharmacy Technicians", icon: <FileText className="h-4 w-4" /> }
       ],
       seniorRoles: [
-        "Chief Medical Officer", "Director of Nursing", "VP of Clinical Operations", 
-        "Medical Director", "Healthcare Compliance Director"
+        { name: "Chief Medical Officer", icon: <Users className="h-4 w-4" /> },
+        { name: "Director of Nursing", icon: <Users className="h-4 w-4" /> },
+        { name: "VP of Clinical Operations", icon: <Building className="h-4 w-4" /> }, 
+        { name: "Medical Director", icon: <FileText className="h-4 w-4" /> },
+        { name: "Healthcare Compliance Director", icon: <Shield className="h-4 w-4" /> }
       ],
-      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1200"
+      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1200",
+      bgColor: "from-green-50 to-emerald-50",
+      accentColor: "border-l-hallmark-green"
     },
     finance: {
       title: "Finance & Banking",
       icon: <TrendingUp className="h-6 w-6 text-hallmark-dark-blue" />,
       description: "Specialized recruitment for financial institutions, investment firms, and insurance companies with a focus on compliance and high performance.",
       roles: [
-        "Financial Analysts", "Investment Bankers", "Compliance Officers", 
-        "Risk Managers", "Loan Officers", "Accountants", "Auditors"
+        { name: "Financial Analysts", icon: <TrendingUp className="h-4 w-4" /> }, 
+        { name: "Investment Bankers", icon: <Briefcase className="h-4 w-4" /> }, 
+        { name: "Compliance Officers", icon: <Shield className="h-4 w-4" /> }, 
+        { name: "Risk Managers", icon: <Shield className="h-4 w-4" /> }, 
+        { name: "Loan Officers", icon: <FileText className="h-4 w-4" /> }, 
+        { name: "Accountants", icon: <FileText className="h-4 w-4" /> }, 
+        { name: "Auditors", icon: <FileSearch className="h-4 w-4" /> }
       ],
       seniorRoles: [
-        "CFO", "Chief Risk Officer", "VP of Finance", "Investment Director", 
-        "Controller", "Director of Financial Planning"
+        { name: "CFO", icon: <TrendingUp className="h-4 w-4" /> },
+        { name: "Chief Risk Officer", icon: <Shield className="h-4 w-4" /> },
+        { name: "VP of Finance", icon: <TrendingUp className="h-4 w-4" /> },
+        { name: "Investment Director", icon: <Briefcase className="h-4 w-4" /> }, 
+        { name: "Controller", icon: <TrendingUp className="h-4 w-4" /> },
+        { name: "Director of Financial Planning", icon: <FileText className="h-4 w-4" /> }
       ],
-      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1200"
+      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=1200",
+      bgColor: "from-indigo-50 to-blue-50",
+      accentColor: "border-l-hallmark-dark-blue"
     },
     manufacturing: {
       title: "Manufacturing & Engineering",
       icon: <Factory className="h-6 w-6 text-hallmark-dark-green" />,
       description: "Connecting skilled workers and engineers with leading manufacturers across automotive, aerospace, electronics, and industrial production.",
       roles: [
-        "Process Engineers", "Quality Control Specialists", "Production Supervisors", 
-        "Supply Chain Analysts", "Maintenance Technicians", "Manufacturing Associates"
+        { name: "Process Engineers", icon: <Factory className="h-4 w-4" /> }, 
+        { name: "Quality Control Specialists", icon: <Shield className="h-4 w-4" /> }, 
+        { name: "Production Supervisors", icon: <Users className="h-4 w-4" /> }, 
+        { name: "Supply Chain Analysts", icon: <TrendingUp className="h-4 w-4" /> }, 
+        { name: "Maintenance Technicians", icon: <Briefcase className="h-4 w-4" /> }, 
+        { name: "Manufacturing Associates", icon: <Factory className="h-4 w-4" /> }
       ],
       seniorRoles: [
-        "VP of Operations", "Plant Manager", "Director of Supply Chain", 
-        "Chief Manufacturing Officer", "Engineering Director"
+        { name: "VP of Operations", icon: <Building className="h-4 w-4" /> },
+        { name: "Plant Manager", icon: <Factory className="h-4 w-4" /> },
+        { name: "Director of Supply Chain", icon: <TrendingUp className="h-4 w-4" /> }, 
+        { name: "Chief Manufacturing Officer", icon: <Factory className="h-4 w-4" /> },
+        { name: "Engineering Director", icon: <Code className="h-4 w-4" /> }
       ],
-      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?q=80&w=1200"
+      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?q=80&w=1200",
+      bgColor: "from-green-50 to-teal-50",
+      accentColor: "border-l-hallmark-dark-green"
     },
     agriculture: {
       title: "Agriculture & Food Production",
       icon: <FileSearch className="h-6 w-6 text-hallmark-light-green" />,
       description: "Specialized talent solutions for farming operations, food processing companies, and agricultural technology providers.",
       roles: [
-        "Agronomists", "Food Safety Specialists", "Farm Managers", 
-        "Agricultural Engineers", "Quality Assurance Technicians", "Plant Breeders"
+        { name: "Agronomists", icon: <Globe className="h-4 w-4" /> }, 
+        { name: "Food Safety Specialists", icon: <Shield className="h-4 w-4" /> }, 
+        { name: "Farm Managers", icon: <Users className="h-4 w-4" /> }, 
+        { name: "Agricultural Engineers", icon: <Factory className="h-4 w-4" /> }, 
+        { name: "Quality Assurance Technicians", icon: <FileSearch className="h-4 w-4" /> }, 
+        { name: "Plant Breeders", icon: <FileText className="h-4 w-4" /> }
       ],
       seniorRoles: [
-        "Director of Agricultural Operations", "Head of Food Safety", 
-        "Chief Sustainability Officer", "R&D Director", "VP of Supply Chain"
+        { name: "Director of Agricultural Operations", icon: <Building className="h-4 w-4" /> },
+        { name: "Head of Food Safety", icon: <Shield className="h-4 w-4" /> }, 
+        { name: "Chief Sustainability Officer", icon: <Globe className="h-4 w-4" /> },
+        { name: "R&D Director", icon: <FileText className="h-4 w-4" /> },
+        { name: "VP of Supply Chain", icon: <TrendingUp className="h-4 w-4" /> }
       ],
-      image: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?q=80&w=1200"
+      image: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?q=80&w=1200",
+      bgColor: "from-lime-50 to-green-50",
+      accentColor: "border-l-hallmark-light-green"
     }
   };
   
@@ -215,9 +270,13 @@ const IndustriesPage = () => {
             
             <Tabs defaultValue="technology" className="w-full" onValueChange={setActiveIndustry}>
               <div className="mb-6 overflow-x-auto">
-                <TabsList className="w-full justify-start">
+                <TabsList className="w-full justify-start bg-hallmark-off-white p-1 rounded-xl">
                   {Object.entries(industries).map(([key, industry]) => (
-                    <TabsTrigger key={key} value={key} className="min-w-[150px] py-4">
+                    <TabsTrigger 
+                      key={key} 
+                      value={key} 
+                      className="min-w-[150px] py-3 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all"
+                    >
                       <div className="flex flex-col items-center gap-2">
                         {industry.icon}
                         <span>{industry.title}</span>
@@ -229,27 +288,35 @@ const IndustriesPage = () => {
               
               {Object.entries(industries).map(([key, industry]) => (
                 <TabsContent key={key} value={key} className="mt-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="rounded-lg overflow-hidden shadow-premium">
-                      <AspectRatio ratio={16/9}>
-                        <img 
-                          src={industry.image} 
-                          alt={industry.title} 
-                          className="w-full h-full object-cover"
-                        />
-                      </AspectRatio>
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-display font-semibold mb-4 text-hallmark-dark-green">
-                        {industry.title} Expertise
-                      </h3>
-                      <p className="text-hallmark-dark mb-6">{industry.description}</p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {industry.roles.map((role, index) => (
-                          <Badge key={index} variant="outline" className="bg-hallmark-off-white">
-                            {role}
-                          </Badge>
-                        ))}
+                  <div className="rounded-xl overflow-hidden bg-gradient-to-br shadow-lg border border-gray-100">
+                    <div className={`bg-gradient-to-br ${industry.bgColor} p-6 md:p-8`}>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div className="rounded-lg overflow-hidden shadow-lg h-full">
+                          <AspectRatio ratio={16/9}>
+                            <img 
+                              src={industry.image} 
+                              alt={industry.title} 
+                              className="w-full h-full object-cover"
+                            />
+                          </AspectRatio>
+                        </div>
+                        <div>
+                          <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-4">
+                            {industry.icon}
+                            <h3 className="text-2xl font-display font-semibold text-hallmark-dark-green">
+                              {industry.title}
+                            </h3>
+                          </div>
+                          <p className="text-hallmark-dark mb-6 text-lg">{industry.description}</p>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {industry.roles.slice(0, 8).map((role, index) => (
+                              <Badge key={index} variant="outline" className="bg-white/80 backdrop-blur-sm py-1.5 px-3 flex items-center gap-1.5 border-hallmark-dark-blue/20">
+                                {role.icon}
+                                <span>{role.name}</span>
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -272,7 +339,7 @@ const IndustriesPage = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="bg-white shadow-premium border-0">
+              <Card className="bg-white shadow-premium border-0 hover:transform hover:-translate-y-1 transition-all">
                 <CardHeader className="pb-2">
                   <div className="w-12 h-12 rounded-full bg-hallmark-light-blue/20 flex items-center justify-center mb-4">
                     <Users className="h-6 w-6 text-hallmark-blue" />
@@ -286,7 +353,7 @@ const IndustriesPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white shadow-premium border-0">
+              <Card className="bg-white shadow-premium border-0 hover:transform hover:-translate-y-1 transition-all">
                 <CardHeader className="pb-2">
                   <div className="w-12 h-12 rounded-full bg-hallmark-light-green/20 flex items-center justify-center mb-4">
                     <Briefcase className="h-6 w-6 text-hallmark-green" />
@@ -300,7 +367,7 @@ const IndustriesPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white shadow-premium border-0">
+              <Card className="bg-white shadow-premium border-0 hover:transform hover:-translate-y-1 transition-all">
                 <CardHeader className="pb-2">
                   <div className="w-12 h-12 rounded-full bg-hallmark-dark-blue/20 flex items-center justify-center mb-4">
                     <Building className="h-6 w-6 text-hallmark-dark-blue" />
@@ -314,7 +381,7 @@ const IndustriesPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white shadow-premium border-0">
+              <Card className="bg-white shadow-premium border-0 hover:transform hover:-translate-y-1 transition-all">
                 <CardHeader className="pb-2">
                   <div className="w-12 h-12 rounded-full bg-hallmark-dark-green/20 flex items-center justify-center mb-4">
                     <FileText className="h-6 w-6 text-hallmark-dark-green" />
@@ -332,7 +399,7 @@ const IndustriesPage = () => {
         </section>
 
         {/* State the Roles & Diverse Roles */}
-        <section className="py-12 px-6 bg-white">
+        <section className="py-12 px-6 bg-hallmark-off-white">
           <div className="container mx-auto">
             <h2 className="text-3xl font-display font-semibold mb-4 text-center text-hallmark-dark-blue">
               Roles We Fill in {activeIndustryData.title}
@@ -342,52 +409,62 @@ const IndustriesPage = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-gradient-to-br from-hallmark-off-white to-white shadow-premium border-0">
-                <CardHeader>
-                  <CardTitle className="text-hallmark-dark-green">Specialist & Technical Roles</CardTitle>
-                  <CardDescription>Core positions at various levels across the organization</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {activeIndustryData.roles.map((role, index) => (
-                      <li key={index} className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-hallmark-blue"></div>
-                        <span>{role}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="bg-gradient-to-br from-white to-hallmark-off-white rounded-xl shadow-lg p-6 border border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-hallmark-blue/10 flex items-center justify-center">
+                    <Briefcase className="h-5 w-5 text-hallmark-blue" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl text-hallmark-dark-green font-display font-semibold">Specialist & Technical Roles</h3>
+                    <p className="text-sm text-hallmark-neutral-gray">Core positions at various levels across the organization</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                  {activeIndustryData.roles.map((role, index) => (
+                    <div key={index} className="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm border border-gray-50">
+                      <div className="w-8 h-8 rounded-full bg-hallmark-blue/10 flex items-center justify-center">
+                        {role.icon}
+                      </div>
+                      <span className="text-hallmark-dark">{role.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
               
-              <Card className="bg-gradient-to-br from-hallmark-off-white to-white shadow-premium border-0">
-                <CardHeader>
-                  <CardTitle className="text-hallmark-dark-blue">Leadership & Executive Roles</CardTitle>
-                  <CardDescription>Senior management and strategic leadership positions</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {activeIndustryData.seniorRoles.map((role, index) => (
-                      <li key={index} className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-hallmark-dark-green"></div>
-                        <span>{role}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="bg-gradient-to-br from-white to-hallmark-off-white rounded-xl shadow-lg p-6 border border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-hallmark-dark-blue/10 flex items-center justify-center">
+                    <Users className="h-5 w-5 text-hallmark-dark-blue" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl text-hallmark-dark-blue font-display font-semibold">Leadership & Executive Roles</h3>
+                    <p className="text-sm text-hallmark-neutral-gray">Senior management and strategic leadership positions</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                  {activeIndustryData.seniorRoles.map((role, index) => (
+                    <div key={index} className="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm border border-gray-50">
+                      <div className="w-8 h-8 rounded-full bg-hallmark-dark-green/10 flex items-center justify-center">
+                        {role.icon}
+                      </div>
+                      <span className="text-hallmark-dark">{role.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Our Approach */}
-        <section className="py-12 px-6 bg-hallmark-off-white">
+        <section className="py-12 px-6 bg-white">
           <div className="container mx-auto">
             <h2 className="text-3xl font-display font-semibold mb-8 text-center text-hallmark-dark-blue">
               Our Industry-Specific Approach
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-white shadow-premium border-0 h-full">
+              <Card className="bg-white shadow-premium border-0 h-full hover:shadow-xl transition-all">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-hallmark-light-blue/20 flex items-center justify-center mb-4">
                     <Factory className="h-6 w-6 text-hallmark-blue" />
@@ -401,7 +478,7 @@ const IndustriesPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white shadow-premium border-0 h-full">
+              <Card className="bg-white shadow-premium border-0 h-full hover:shadow-xl transition-all">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-hallmark-light-green/20 flex items-center justify-center mb-4">
                     <Database className="h-6 w-6 text-hallmark-green" />
@@ -415,7 +492,7 @@ const IndustriesPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white shadow-premium border-0 h-full">
+              <Card className="bg-white shadow-premium border-0 h-full hover:shadow-xl transition-all">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-hallmark-dark-green/20 flex items-center justify-center mb-4">
                     <Handshake className="h-6 w-6 text-hallmark-dark-green" />
@@ -433,7 +510,7 @@ const IndustriesPage = () => {
         </section>
 
         {/* Industry Reports */}
-        <section className="py-12 px-6 bg-white">
+        <section className="py-12 px-6 bg-hallmark-off-white">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
@@ -446,13 +523,13 @@ const IndustriesPage = () => {
                   staffing decisions and gain competitive advantage.
                 </p>
                 <div className="space-y-4">
-                  <Alert className="border-l-4 border-l-hallmark-blue bg-hallmark-off-white">
+                  <Alert className={`${activeIndustryData.accentColor} border-l-4 bg-white shadow-sm`}>
                     <AlertTitle className="text-hallmark-dark-blue">2025 Technology Talent Outlook</AlertTitle>
                     <AlertDescription>
                       Examining emerging skills demand, salary trends, and recruitment strategies in the tech sector.
                     </AlertDescription>
                   </Alert>
-                  <Alert className="border-l-4 border-l-hallmark-green bg-hallmark-off-white">
+                  <Alert className={`${activeIndustryData.accentColor} border-l-4 bg-white shadow-sm`}>
                     <AlertTitle className="text-hallmark-dark-blue">Healthcare Staffing Crisis Report</AlertTitle>
                     <AlertDescription>
                       Analysis of current healthcare staffing challenges and innovative solutions for retention.
@@ -477,20 +554,20 @@ const IndustriesPage = () => {
         </section>
 
         {/* FAQs */}
-        <section className="py-12 px-6 bg-hallmark-off-white">
+        <section className="py-12 px-6 bg-white">
           <div className="container mx-auto">
             <h2 className="text-3xl font-display font-semibold mb-8 text-center text-hallmark-dark-blue">
               Frequently Asked Questions
             </h2>
             
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto bg-hallmark-off-white p-6 rounded-xl shadow-sm">
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
-                    <AccordionTrigger className="text-left font-medium text-hallmark-dark hover:text-hallmark-dark-green hover:no-underline">
+                  <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 last:border-none">
+                    <AccordionTrigger className="text-left font-medium text-hallmark-dark hover:text-hallmark-dark-green hover:no-underline py-4">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-hallmark-dark">
+                    <AccordionContent className="text-hallmark-dark pb-4">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -501,7 +578,7 @@ const IndustriesPage = () => {
         </section>
 
         {/* Blogs & Insights */}
-        <section className="py-12 px-6 bg-white">
+        <section className="py-12 px-6 bg-hallmark-off-white">
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center mb-8">
               <div>
@@ -521,12 +598,12 @@ const IndustriesPage = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {blogPosts.map((post, index) => (
-                <Card key={index} className="bg-white shadow-premium border-0 overflow-hidden h-full flex flex-col">
+                <Card key={index} className="bg-white shadow-premium border-0 overflow-hidden h-full flex flex-col hover:shadow-xl transition-all">
                   <div className="h-48 overflow-hidden">
                     <img 
                       src={post.image} 
                       alt={post.title} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <CardHeader>
@@ -561,7 +638,7 @@ const IndustriesPage = () => {
         </section>
 
         {/* Contact Section */}
-        <div className="bg-hallmark-off-white">
+        <div className="bg-white">
           <Contact />
         </div>
       </main>
