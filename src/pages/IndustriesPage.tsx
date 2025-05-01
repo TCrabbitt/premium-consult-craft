@@ -465,55 +465,79 @@ const IndustriesPage = () => {
           </div>
         </section>
 
-        {/* Our Approach */}
-        <section className="py-12 px-6 bg-white">
+        {/* Our Approach - UPDATED SECTION */}
+        <section className="py-16 px-6 bg-gradient-to-br from-white to-hallmark-off-white/40">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-display font-semibold mb-8 text-center text-hallmark-dark-blue">
-              Our Industry-Specific Approach
-            </h2>
+            <div className="text-center mb-10">
+              <span className="inline-block bg-gradient-to-r from-hallmark-light-green/20 to-hallmark-blue/20 px-4 py-1.5 rounded-full text-sm font-medium text-hallmark-dark-blue mb-4">OUR METHODOLOGY</span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue bg-clip-text text-transparent">
+                Our Industry-Specific Approach
+              </h2>
+              <p className="text-hallmark-neutral-gray max-w-2xl mx-auto">
+                We don't just fill positions—we provide workforce solutions tailored to your industry's unique challenges
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-white shadow-premium border-0 h-full hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-hallmark-light-blue/20 flex items-center justify-center mb-4">
-                    <Factory className="h-6 w-6 text-hallmark-blue" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              <Card className="bg-gradient-to-br from-white to-hallmark-off-white border-0 shadow-premium rounded-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-hallmark-light-blue/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-hallmark-light-green/10 rounded-full -ml-12 -mb-12"></div>
+                
+                <CardHeader className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-hallmark-light-blue/20 to-hallmark-blue/20 flex items-center justify-center mb-6 transform transition-all duration-500 group-hover:rotate-6">
+                    <Factory className="h-8 w-8 text-hallmark-blue" />
                   </div>
-                  <CardTitle className="text-xl text-hallmark-dark-green">Industry Immersion</CardTitle>
+                  <CardTitle className="text-2xl font-display font-semibold text-hallmark-dark-blue">Industry Immersion</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-hallmark-dark">
+                <CardContent className="relative z-10">
+                  <p className="text-hallmark-neutral-gray">
                     Our recruiters immerse themselves in your industry, attending conferences, following trends, and building networks specifically within your sector to ensure we understand the nuanced requirements of your business.
                   </p>
+                  <div className="h-1 w-16 bg-hallmark-blue/20 rounded-full mt-6 transform origin-left transition-all duration-300 group-hover:w-24"></div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white shadow-premium border-0 h-full hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-hallmark-light-green/20 flex items-center justify-center mb-4">
-                    <Database className="h-6 w-6 text-hallmark-green" />
+              <Card className="bg-gradient-to-br from-white to-hallmark-off-white border-0 shadow-premium rounded-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+                <div className="absolute top-0 left-0 w-32 h-32 bg-hallmark-green/10 rounded-full -ml-16 -mt-16"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-hallmark-light-green/10 rounded-full -mr-12 -mb-12"></div>
+                
+                <CardHeader className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-hallmark-light-green/20 to-hallmark-green/20 flex items-center justify-center mb-6 transform transition-all duration-500 group-hover:rotate-6">
+                    <Database className="h-8 w-8 text-hallmark-green" />
                   </div>
-                  <CardTitle className="text-xl text-hallmark-dark-green">Specialized Screening</CardTitle>
+                  <CardTitle className="text-2xl font-display font-semibold text-hallmark-dark-green">Specialized Screening</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-hallmark-dark">
+                <CardContent className="relative z-10">
+                  <p className="text-hallmark-neutral-gray">
                     We develop custom assessment protocols for each industry that evaluate not just technical skills but also industry knowledge, regulatory awareness, and sector-specific experience to ensure perfect-fit candidates.
                   </p>
+                  <div className="h-1 w-16 bg-hallmark-green/20 rounded-full mt-6 transform origin-left transition-all duration-300 group-hover:w-24"></div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white shadow-premium border-0 h-full hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-hallmark-dark-green/20 flex items-center justify-center mb-4">
-                    <Handshake className="h-6 w-6 text-hallmark-dark-green" />
+              <Card className="bg-gradient-to-br from-white to-hallmark-off-white border-0 shadow-premium rounded-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-hallmark-dark-blue/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-hallmark-dark-green/10 rounded-full -ml-12 -mb-12"></div>
+                
+                <CardHeader className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-hallmark-dark-green/20 to-hallmark-dark-blue/20 flex items-center justify-center mb-6 transform transition-all duration-500 group-hover:rotate-6">
+                    <Handshake className="h-8 w-8 text-hallmark-dark-green" />
                   </div>
-                  <CardTitle className="text-xl text-hallmark-dark-green">Compliance Mastery</CardTitle>
+                  <CardTitle className="text-2xl font-display font-semibold text-hallmark-dark-blue">Compliance Mastery</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-hallmark-dark">
+                <CardContent className="relative z-10">
+                  <p className="text-hallmark-neutral-gray">
                     We maintain dedicated compliance teams for regulated industries, ensuring all staffing solutions meet industry-specific requirements, certifications, and legal standards without compromise.
                   </p>
+                  <div className="h-1 w-16 bg-hallmark-dark-blue/20 rounded-full mt-6 transform origin-left transition-all duration-300 group-hover:w-24"></div>
                 </CardContent>
               </Card>
+            </div>
+            
+            <div className="text-center mt-12">
+              <Button className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue text-white hover:shadow-lg shadow-hallmark-blue/20 transform transition-all hover:-translate-y-1 rounded-xl px-8 py-6">
+                Learn About Our Industry Expertise
+              </Button>
             </div>
           </div>
         </section>
