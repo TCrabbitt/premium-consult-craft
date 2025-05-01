@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
@@ -398,56 +397,66 @@ const IndustriesPage = () => {
           </div>
         </section>
 
-        {/* State the Roles & Diverse Roles */}
-        <section className="py-12 px-6 bg-hallmark-off-white">
+        {/* State the Roles & Diverse Roles - IMPROVED SECTION */}
+        <section className="py-16 px-6 bg-hallmark-off-white">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-display font-semibold mb-4 text-center text-hallmark-dark-blue">
+            <h2 className="text-3xl font-display font-semibold mb-6 text-center text-hallmark-dark-blue">
               Roles We Fill in {activeIndustryData.title}
             </h2>
-            <p className="text-hallmark-neutral-gray max-w-3xl mx-auto text-center mb-8">
+            <p className="text-hallmark-neutral-gray max-w-3xl mx-auto text-center mb-10">
               From entry-level positions to C-suite executives, we provide talent solutions across the entire organizational spectrum
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-white to-hallmark-off-white rounded-xl shadow-lg p-6 border border-gray-100">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-hallmark-blue/10 flex items-center justify-center">
-                    <Briefcase className="h-5 w-5 text-hallmark-blue" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Specialist & Technical Roles Card */}
+              <div className="bg-gradient-to-br from-white to-hallmark-off-white rounded-xl shadow-premium p-8 border border-gray-50 transform transition-all hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-full bg-hallmark-blue/10 flex items-center justify-center">
+                    <Briefcase className="h-7 w-7 text-hallmark-blue" />
                   </div>
                   <div>
-                    <h3 className="text-xl text-hallmark-dark-green font-display font-semibold">Specialist & Technical Roles</h3>
-                    <p className="text-sm text-hallmark-neutral-gray">Core positions at various levels across the organization</p>
+                    <h3 className="text-2xl text-hallmark-dark-green font-display font-semibold">Specialist & Technical Roles</h3>
+                    <p className="text-hallmark-neutral-gray">Core positions at various levels across the organization</p>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                
+                <div className="grid grid-cols-2 gap-4 mt-8">
                   {activeIndustryData.roles.map((role, index) => (
-                    <div key={index} className="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm border border-gray-50">
-                      <div className="w-8 h-8 rounded-full bg-hallmark-blue/10 flex items-center justify-center">
+                    <div 
+                      key={index} 
+                      className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm border border-gray-50 transform transition-all hover:-translate-y-1 hover:shadow-md hover:border-hallmark-blue/20"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-hallmark-blue/20 to-hallmark-light-blue/20 flex items-center justify-center">
                         {role.icon}
                       </div>
-                      <span className="text-hallmark-dark">{role.name}</span>
+                      <span className="text-hallmark-dark font-medium">{role.name}</span>
                     </div>
                   ))}
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-white to-hallmark-off-white rounded-xl shadow-lg p-6 border border-gray-100">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-hallmark-dark-blue/10 flex items-center justify-center">
-                    <Users className="h-5 w-5 text-hallmark-dark-blue" />
+              {/* Leadership & Executive Roles Card */}
+              <div className="bg-gradient-to-br from-white to-hallmark-off-white rounded-xl shadow-premium p-8 border border-gray-50 transform transition-all hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-full bg-hallmark-dark-blue/10 flex items-center justify-center">
+                    <Users className="h-7 w-7 text-hallmark-dark-blue" />
                   </div>
                   <div>
-                    <h3 className="text-xl text-hallmark-dark-blue font-display font-semibold">Leadership & Executive Roles</h3>
-                    <p className="text-sm text-hallmark-neutral-gray">Senior management and strategic leadership positions</p>
+                    <h3 className="text-2xl text-hallmark-dark-blue font-display font-semibold">Leadership & Executive Roles</h3>
+                    <p className="text-hallmark-neutral-gray">Senior management and strategic leadership positions</p>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                
+                <div className="grid grid-cols-2 gap-4 mt-8">
                   {activeIndustryData.seniorRoles.map((role, index) => (
-                    <div key={index} className="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm border border-gray-50">
-                      <div className="w-8 h-8 rounded-full bg-hallmark-dark-green/10 flex items-center justify-center">
+                    <div 
+                      key={index} 
+                      className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm border border-gray-50 transform transition-all hover:-translate-y-1 hover:shadow-md hover:border-hallmark-dark-blue/20"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-hallmark-dark-green/20 to-hallmark-dark-blue/20 flex items-center justify-center">
                         {role.icon}
                       </div>
-                      <span className="text-hallmark-dark">{role.name}</span>
+                      <span className="text-hallmark-dark font-medium">{role.name}</span>
                     </div>
                   ))}
                 </div>

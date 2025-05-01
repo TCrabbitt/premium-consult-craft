@@ -122,7 +122,7 @@ const BusinessSuites = () => {
               <TabsContent key={tab.id} value={tab.id} className="outline-none focus-visible:ring-0 focus-visible:ring-offset-0">
                 <div className="bg-gradient-to-br from-hallmark-dark-blue to-hallmark-dark rounded-xl overflow-hidden shadow-premium">
                   <div className="grid grid-cols-1 lg:grid-cols-12">
-                    <div className="p-8 md:p-12 lg:col-span-7">
+                    <div className="p-8 md:p-12 lg:col-span-9 mx-auto">
                       <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
                         {tab.content.title}
                       </h3>
@@ -134,136 +134,17 @@ const BusinessSuites = () => {
                         Learn more
                       </Button>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
                         {tab.content.links.map((link, idx) => (
                           <a
                             key={idx}
                             href={link.url}
-                            className="flex items-center justify-between p-4 rounded-md bg-white/10 hover:bg-white/20 text-white transition-all duration-300"
+                            className="flex items-center justify-between p-4 rounded-md bg-white/10 hover:bg-white/20 text-white transition-all duration-300 group"
                           >
                             <span>{link.text}</span>
-                            <ChevronRight className="w-5 h-5" />
+                            <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
                           </a>
                         ))}
-                      </div>
-                    </div>
-                    
-                    <div className="hidden lg:block lg:col-span-5 relative overflow-hidden bg-gradient-to-br from-hallmark-dark-blue/70 to-hallmark-dark/70">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        {tab.id === "payroll" && (
-                          <div className="grid grid-cols-2 gap-6 p-8">
-                            <div className="animate-float">
-                              <div className="w-32 h-32 rounded-full bg-hallmark-green/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-24 h-24 rounded-full bg-hallmark-green/30 flex items-center justify-center">
-                                  <BadgeDollarSign className="w-12 h-12 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float mt-12" style={{ animationDelay: "0.5s" }}>
-                              <div className="w-24 h-24 rounded-full bg-hallmark-blue/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-16 h-16 rounded-full bg-hallmark-blue/30 flex items-center justify-center">
-                                  <BadgeDollarSign className="w-8 h-8 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float" style={{ animationDelay: "0.8s" }}>
-                              <div className="w-28 h-28 rounded-full bg-hallmark-light-green/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-20 h-20 rounded-full bg-hallmark-light-green/30 flex items-center justify-center">
-                                  <BadgeDollarSign className="w-10 h-10 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float mt-8" style={{ animationDelay: "1.2s" }}>
-                              <div className="w-20 h-20 rounded-full bg-hallmark-dark-blue/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-14 h-14 rounded-full bg-hallmark-dark-blue/30 flex items-center justify-center">
-                                  <BadgeDollarSign className="w-8 h-8 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        {tab.id === "hcm" && (
-                          <div className="grid grid-cols-2 gap-6 p-8">
-                            <div className="animate-float">
-                              <div className="w-32 h-32 rounded-full bg-hallmark-light-green/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-24 h-24 rounded-full bg-hallmark-light-green/30 flex items-center justify-center">
-                                  <UserRound className="w-12 h-12 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float mt-12" style={{ animationDelay: "0.5s" }}>
-                              <div className="w-24 h-24 rounded-full bg-hallmark-green/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-16 h-16 rounded-full bg-hallmark-green/30 flex items-center justify-center">
-                                  <UserRound className="w-8 h-8 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float" style={{ animationDelay: "0.8s" }}>
-                              <div className="w-28 h-28 rounded-full bg-hallmark-blue/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-20 h-20 rounded-full bg-hallmark-blue/30 flex items-center justify-center">
-                                  <UserRound className="w-10 h-10 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        {tab.id === "it" && (
-                          <div className="grid grid-cols-2 gap-6 p-8">
-                            <div className="animate-float">
-                              <div className="w-32 h-32 rounded-full bg-hallmark-blue/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-24 h-24 rounded-full bg-hallmark-blue/30 flex items-center justify-center">
-                                  <Laptop className="w-12 h-12 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float mt-12" style={{ animationDelay: "0.6s" }}>
-                              <div className="w-24 h-24 rounded-full bg-hallmark-green/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-16 h-16 rounded-full bg-hallmark-green/30 flex items-center justify-center">
-                                  <Laptop className="w-8 h-8 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float" style={{ animationDelay: "0.9s" }}>
-                              <div className="w-28 h-28 rounded-full bg-hallmark-dark-blue/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-20 h-20 rounded-full bg-hallmark-dark-blue/30 flex items-center justify-center">
-                                  <Laptop className="w-10 h-10 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        {tab.id === "spend" && (
-                          <div className="grid grid-cols-2 gap-6 p-8">
-                            <div className="animate-float">
-                              <div className="w-32 h-32 rounded-full bg-hallmark-dark-blue/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-24 h-24 rounded-full bg-hallmark-dark-blue/30 flex items-center justify-center">
-                                  <CreditCard className="w-12 h-12 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float mt-12" style={{ animationDelay: "0.7s" }}>
-                              <div className="w-24 h-24 rounded-full bg-hallmark-green/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-16 h-16 rounded-full bg-hallmark-green/30 flex items-center justify-center">
-                                  <CreditCard className="w-8 h-8 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float" style={{ animationDelay: "1s" }}>
-                              <div className="w-28 h-28 rounded-full bg-hallmark-light-green/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-20 h-20 rounded-full bg-hallmark-light-green/30 flex items-center justify-center">
-                                  <CreditCard className="w-10 h-10 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="animate-float mt-8" style={{ animationDelay: "1.3s" }}>
-                              <div className="w-20 h-20 rounded-full bg-hallmark-blue/20 backdrop-blur-sm flex items-center justify-center">
-                                <div className="w-14 h-14 rounded-full bg-hallmark-blue/30 flex items-center justify-center">
-                                  <CreditCard className="w-8 h-8 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
                       </div>
                     </div>
                   </div>
