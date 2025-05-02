@@ -2,8 +2,8 @@
 import { ChartBar, Globe, Users, Building } from "lucide-react";
 
 const StatsItem = ({ icon, number, label, gradient }: { icon: React.ReactNode, number: string, label: string, gradient: string }) => (
-  <div className="premium-card p-8 flex flex-col items-center">
-    <div className={`mb-4 p-3 rounded-full ${gradient} w-16 h-16 flex items-center justify-center`}>
+  <div className="premium-card p-8 flex flex-col items-center group hover:-translate-y-1 transition-transform duration-300">
+    <div className={`mb-4 p-3 rounded-full ${gradient} w-16 h-16 flex items-center justify-center group-hover:scale-105 transition-transform`}>
       {icon}
     </div>
     <span className="text-4xl font-display font-bold text-hallmark-dark mb-1">{number}</span>
