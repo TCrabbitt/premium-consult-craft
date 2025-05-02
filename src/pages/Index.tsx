@@ -2,13 +2,18 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import WhoWeAre from '@/components/WhoWeAre';
+import OurPurpose from '@/components/OurPurpose';
+import BriefIntro from '@/components/BriefIntro';
 import Stats from '@/components/Stats';
 import RecruiterSolutions from '@/components/RecruiterSolutions';
 import BusinessSuites from '@/components/BusinessSuites';
 import GlobalSolutions from '@/components/GlobalSolutions';
 import CandidateSolutions from '@/components/CandidateSolutions';
 import Testimonials from '@/components/Testimonials';
+import OurApproach from '@/components/OurApproach';
+import KeyMetrics from '@/components/KeyMetrics';
+import USPs from '@/components/USPs';
+import WhyHWS from '@/components/WhyHWS';
 import CTA from '@/components/CTA';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -45,7 +50,11 @@ const Index = () => {
         <Hero />
         
         <div className="reveal">
-          <WhoWeAre />
+          <OurPurpose />
+        </div>
+        
+        <div className="reveal">
+          <BriefIntro />
         </div>
         
         <div className="reveal">
@@ -66,6 +75,22 @@ const Index = () => {
         
         <div className="reveal">
           <CandidateSolutions />
+        </div>
+        
+        <div className="reveal">
+          <OurApproach />
+        </div>
+        
+        <div className="reveal">
+          <KeyMetrics />
+        </div>
+        
+        <div className="reveal">
+          <USPs />
+        </div>
+        
+        <div className="reveal">
+          <WhyHWS />
         </div>
         
         <div className="reveal">
