@@ -47,20 +47,25 @@ const Index = () => {
       
       {/* Main Content */}
       <main className="flex-grow">
+        {/* Hero Section */}
         <Hero />
         
+        {/* 1. Our Purpose */}
         <div className="reveal">
           <OurPurpose />
         </div>
         
+        {/* 2. Brief Introduction */}
         <div className="reveal">
           <BriefIntro />
         </div>
         
+        {/* 3. Our Impact in Numbers */}
         <div className="reveal">
           <Stats />
         </div>
         
+        {/* 4. Our Solutions */}
         <div className="reveal">
           <RecruiterSolutions />
         </div>
@@ -77,30 +82,37 @@ const Index = () => {
           <CandidateSolutions />
         </div>
         
+        {/* 5. Our Approach */}
         <div className="reveal">
           <OurApproach />
         </div>
         
+        {/* 6. How We Deliver Excellence (Key Metrics) */}
         <div className="reveal">
           <KeyMetrics />
         </div>
         
+        {/* 7. USPs */}
         <div className="reveal">
           <USPs />
         </div>
         
+        {/* 8. Why Choose HWS */}
         <div className="reveal">
           <WhyHWS />
         </div>
         
+        {/* 9. Testimonials */}
         <div className="reveal">
           <Testimonials />
         </div>
         
+        {/* 10. Call to Action */}
         <div className="reveal">
           <CTA />
         </div>
         
+        {/* 11. Contact Us Form */}
         <div className="reveal">
           <Contact />
         </div>

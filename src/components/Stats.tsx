@@ -11,6 +11,18 @@ const StatsItem = ({ icon, number, label, gradient }: { icon: React.ReactNode, n
   </div>
 );
 
+const BusinessImpactItem = ({ icon, title, description, gradient }: { icon: React.ReactNode, title: string, description: string, gradient: string }) => (
+  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 group hover:-translate-y-1 transform transition-all">
+    <div className="flex flex-col items-center text-center">
+      <div className={`p-3 rounded-full ${gradient} text-white mb-4 group-hover:scale-110 transition-transform`}>
+        {icon}
+      </div>
+      <h3 className="font-semibold text-xl mb-2 text-hallmark-dark">{title}</h3>
+      <p className="text-hallmark-neutral-gray">{description}</p>
+    </div>
+  </div>
+);
+
 const Stats = () => {
   const statsData = [
     {
@@ -92,7 +104,7 @@ const Stats = () => {
           ))}
         </div>
 
-        {/* Measurable Impact & ROI section - reorganized and improved */}
+        {/* Measurable Impact & ROI section */}
         <div className="mt-20 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-hallmark-dark">
             Measurable Impact & ROI
@@ -105,15 +117,13 @@ const Stats = () => {
         {/* Business impact cards - moved up as requested */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {businessImpactData.map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 group hover:-translate-y-1 transform transition-all">
-              <div className="flex flex-col items-center text-center">
-                <div className={`p-3 rounded-full ${item.gradient} text-white mb-4 group-hover:scale-110 transition-transform`}>
-                  {item.icon}
-                </div>
-                <h3 className="font-semibold text-xl mb-2 text-hallmark-dark">{item.title}</h3>
-                <p className="text-hallmark-neutral-gray">{item.description}</p>
-              </div>
-            </div>
+            <BusinessImpactItem
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              gradient={item.gradient}
+            />
           ))}
         </div>
 
@@ -186,17 +196,17 @@ const Stats = () => {
           </div>
         </div>
 
-        {/* "The Clear Choice" section */}
+        {/* Enhanced "Why Choose HWS" section */}
         <div className="mt-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-hallmark-dark">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-hallmark-dark">
             Why Choose HWS
           </h2>
-          <h3 className="text-xl md:text-2xl font-display font-medium mb-8 text-hallmark-blue">
+          <h3 className="text-xl md:text-2xl font-display font-medium mb-8 text-hallmark-blue bg-gradient-to-r from-hallmark-blue to-hallmark-green bg-clip-text text-transparent">
             The Clear Choice for HR & Payroll Solutions
           </h3>
           
           <div className="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100">
+            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100 transform hover:-translate-y-1">
               <div className="h-12 w-12 rounded-full bg-gradient-to-r from-hallmark-green to-hallmark-light-green flex items-center justify-center text-white mx-auto mb-4">
                 <span className="text-xl font-bold">1</span>
               </div>
@@ -204,7 +214,7 @@ const Stats = () => {
               <p className="text-sm text-hallmark-neutral-gray">Seamlessly connect with your existing business systems.</p>
             </div>
             
-            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100">
+            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100 transform hover:-translate-y-1">
               <div className="h-12 w-12 rounded-full bg-gradient-to-r from-hallmark-blue to-hallmark-light-blue flex items-center justify-center text-white mx-auto mb-4">
                 <span className="text-xl font-bold">2</span>
               </div>
@@ -212,7 +222,7 @@ const Stats = () => {
               <p className="text-sm text-hallmark-neutral-gray">Our experts are always available to assist you.</p>
             </div>
             
-            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100">
+            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100 transform hover:-translate-y-1">
               <div className="h-12 w-12 rounded-full bg-gradient-to-r from-hallmark-dark-blue to-hallmark-blue flex items-center justify-center text-white mx-auto mb-4">
                 <span className="text-xl font-bold">3</span>
               </div>

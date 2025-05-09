@@ -1,7 +1,7 @@
+
 import React from 'react';
 import { TrendingUp, ChartBar, BarChart4, Database, DollarSign, Award, Star, ShieldCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { 
   ChartContainer,
   ChartTooltipContent
@@ -104,9 +104,10 @@ const KeyMetrics = () => {
         
         {/* Client satisfaction and business impact section - vertical layout as requested */}
         <div className="mt-16 grid grid-cols-1 gap-8">
+          {/* Why clients choose us */}
           <div className="bg-gradient-to-r from-hallmark-off-white to-white p-8 rounded-xl shadow-premium border border-gray-100/50">
             <h3 className="text-2xl font-display font-semibold mb-6 text-hallmark-dark">Why clients choose us:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-6">
               {[
                 {
                   icon: <Award className="h-8 w-8 text-hallmark-green" />,
@@ -124,12 +125,72 @@ const KeyMetrics = () => {
                   description: "Dedicated service teams available to ensure your systems operate at peak performance."
                 }
               ].map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100/50">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="mb-4">
-                      {item.icon}
-                    </div>
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100/50 flex items-center gap-6">
+                  <div className="p-3 rounded-full bg-gradient-to-r from-hallmark-light-green/20 to-hallmark-light-blue/20">
+                    {item.icon}
+                  </div>
+                  <div>
                     <h4 className="font-semibold text-lg mb-2 text-hallmark-dark">{item.title}</h4>
+                    <p className="text-hallmark-neutral-gray">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Why Choose Hallmark */}
+          <div className="bg-white p-8 rounded-xl shadow-premium border border-gray-100/50">
+            <h3 className="text-2xl font-display font-semibold mb-6 text-hallmark-dark">Why Choose Hallmark</h3>
+            
+            <div className="grid grid-cols-1 gap-6">
+              {[
+                {
+                  title: "Customized Solutions",
+                  description: "Tailored to your specific business needs and industry requirements.",
+                  icon: <div className="p-3 rounded-full bg-hallmark-light-green/20 text-hallmark-green">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                },
+                {
+                  title: "Advanced Technology",
+                  description: "Cutting-edge platforms that evolve with your business.",
+                  icon: <div className="p-3 rounded-full bg-hallmark-light-blue/20 text-hallmark-blue">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                      <line x1="8" y1="21" x2="16" y2="21" />
+                      <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                  </div>
+                },
+                {
+                  title: "Dedicated Support",
+                  description: "Personalized assistance throughout implementation and beyond.",
+                  icon: <div className="p-3 rounded-full bg-hallmark-blue/20 text-hallmark-dark-blue">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 1 0 7.75" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </div>
+                },
+                {
+                  title: "Proven ROI",
+                  description: "Tangible business results with measurable impact on your bottom line.",
+                  icon: <div className="p-3 rounded-full bg-hallmark-green/20 text-hallmark-dark-green">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  </div>
+                }
+              ].map((item, index) => (
+                <div key={index} className="flex items-start gap-4 bg-gradient-to-r from-white to-hallmark-off-white/30 p-5 rounded-lg border border-gray-100 shadow-sm">
+                  {item.icon}
+                  <div>
+                    <h4 className="font-medium text-hallmark-dark mb-1">{item.title}</h4>
                     <p className="text-sm text-hallmark-neutral-gray">{item.description}</p>
                   </div>
                 </div>
@@ -137,81 +198,7 @@ const KeyMetrics = () => {
             </div>
           </div>
           
-          <div className="bg-white p-8 rounded-xl shadow-premium border border-gray-100/50">
-            <h3 className="text-2xl font-display font-semibold mb-6 text-hallmark-dark">Why Choose Hallmark</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col space-y-6">
-                {[
-                  {
-                    title: "Customized Solutions",
-                    description: "Tailored to your specific business needs and industry requirements.",
-                    icon: <div className="p-3 rounded-full bg-hallmark-light-green/20 text-hallmark-green">
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      </svg>
-                    </div>
-                  },
-                  {
-                    title: "Advanced Technology",
-                    description: "Cutting-edge platforms that evolve with your business.",
-                    icon: <div className="p-3 rounded-full bg-hallmark-light-blue/20 text-hallmark-blue">
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                        <line x1="8" y1="21" x2="16" y2="21" />
-                        <line x1="12" y1="17" x2="12" y2="21" />
-                      </svg>
-                    </div>
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex gap-4">
-                    {item.icon}
-                    <div>
-                      <h4 className="font-medium text-hallmark-dark mb-1">{item.title}</h4>
-                      <p className="text-sm text-hallmark-neutral-gray">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="flex flex-col space-y-6">
-                {[
-                  {
-                    title: "Dedicated Support",
-                    description: "Personalized assistance throughout implementation and beyond.",
-                    icon: <div className="p-3 rounded-full bg-hallmark-blue/20 text-hallmark-dark-blue">
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                        <circle cx="9" cy="7" r="4" />
-                        <path d="M23 21v-2a4 4 0 0 1 0 7.75" />
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                      </svg>
-                    </div>
-                  },
-                  {
-                    title: "Proven ROI",
-                    description: "Tangible business results with measurable impact on your bottom line.",
-                    icon: <div className="p-3 rounded-full bg-hallmark-green/20 text-hallmark-dark-green">
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                    </div>
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex gap-4">
-                    {item.icon}
-                    <div>
-                      <h4 className="font-medium text-hallmark-dark mb-1">{item.title}</h4>
-                      <p className="text-sm text-hallmark-neutral-gray">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* Problem & Solution Showcase - simplified to one problem/solution */}
+          {/* Problem & Solution Showcase - One comprehensive pair as requested */}
           <div className="bg-gradient-to-r from-hallmark-off-white to-white p-8 rounded-xl shadow-premium border border-gray-100/50">
             <h3 className="text-2xl font-display font-semibold mb-6 text-hallmark-dark text-center">Problem & Solution Showcase</h3>
             
