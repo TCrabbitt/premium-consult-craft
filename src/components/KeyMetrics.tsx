@@ -1,10 +1,9 @@
-
+import React from 'react';
 import { TrendingUp, ChartBar, BarChart4, Database, DollarSign, Award, Star, ShieldCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { 
   ChartContainer,
-  ChartTooltip,
   ChartTooltipContent
 } from "@/components/ui/chart";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from "recharts";
@@ -184,7 +183,7 @@ const KeyMetrics = () => {
                       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                         <circle cx="9" cy="7" r="4" />
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M23 21v-2a4 4 0 0 1 0 7.75" />
                         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                       </svg>
                     </div>
