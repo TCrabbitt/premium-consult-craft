@@ -7,23 +7,23 @@ const RecruiterSolutions = () => {
   const solutions = [
     {
       icon: <Search className="h-6 w-6 text-hallmark-green" />,
-      title: "Talent Acquisition Strategy",
-      description: "Develop comprehensive strategies to attract and retain top talent in your industry."
+      title: "Talent Acquisition",
+      description: "Comprehensive strategies to attract top talent"
     },
     {
       icon: <Users className="h-6 w-6 text-hallmark-green" />,
       title: "Candidate Experience",
-      description: "Optimize your recruitment process to provide an exceptional experience for candidates."
+      description: "Optimized recruitment process for exceptional experiences"
     },
     {
       icon: <Briefcase className="h-6 w-6 text-hallmark-green" />,
       title: "Employer Branding",
-      description: "Build a strong employer brand that resonates with your target talent pool."
+      description: "Build a strong employer brand that resonates"
     },
     {
       icon: <Award className="h-6 w-6 text-hallmark-green" />,
-      title: "Recruitment Technology",
-      description: "Implement cutting-edge technology to streamline your recruitment processes."
+      title: "Recruitment Tech",
+      description: "Cutting-edge technology for streamlined processes"
     }
   ];
 
@@ -35,46 +35,43 @@ const RecruiterSolutions = () => {
   };
 
   return (
-    <section id="recruiters" className="section-padding bg-white relative overflow-hidden">
-      {/* Background accent element */}
-      <div className="absolute top-0 left-0 h-full w-1/3 bg-hallmark-off-white rounded-r-[100px] -z-10"></div>
-      
-      <div className="container mx-auto">
-        <div className="text-center mb-16 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-hallmark-light-green/20 text-hallmark-green font-medium mb-6">
-            <Briefcase size={16} />
+    <section id="recruiters" className="py-20 bg-gradient-to-br from-white to-hallmark-off-white">
+      <div className="container mx-auto px-6">
+        <div className="mb-12 max-w-lg mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-hallmark-green text-hallmark-green text-sm mb-3">
+            <Briefcase size={14} strokeWidth={1.5} />
             <span>For Recruiters</span>
           </div>
-          <h2 className="section-title">Innovative Solutions for Recruiters</h2>
-          <p className="section-subtitle max-w-3xl">
-            We provide specialized consulting services to help recruitment professionals excel in a competitive market and achieve outstanding hiring results.
+          <h2 className="text-3xl font-display font-semibold mb-3">Innovative Recruiting Solutions</h2>
+          <p className="text-hallmark-neutral-gray text-sm">
+            Specialized consulting to help you excel in a competitive market
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
           {solutions.map((solution, index) => (
-            <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-premium h-full flex flex-col">
-              <div className="bg-hallmark-light-green/20 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-6">
+            <Card key={index} className="border-0 shadow-sm hover:shadow-md transition-all bg-white p-6">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-hallmark-green/30 mb-4">
                 {solution.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-hallmark-dark">{solution.title}</h3>
-              <p className="text-hallmark-neutral-gray mb-6 flex-grow">{solution.description}</p>
+              <h3 className="text-lg font-semibold mb-2 text-hallmark-dark">{solution.title}</h3>
+              <p className="text-hallmark-neutral-gray text-sm mb-4">{solution.description}</p>
               <button 
                 onClick={handleLearnMore}
-                className="inline-flex items-center font-medium text-hallmark-green hover:text-hallmark-blue transition-colors"
+                className="inline-flex items-center text-sm font-medium text-hallmark-green hover:text-hallmark-blue transition-colors"
               >
-                Learn more <ArrowRight size={16} className="ml-1" />
+                Details <ArrowRight size={14} className="ml-1" />
               </button>
             </Card>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <button 
             onClick={handleLearnMore}
-            className="px-6 py-3 border border-hallmark-dark-green text-hallmark-dark-green hover:bg-hallmark-dark-green hover:text-white transition-all duration-300 rounded-lg font-medium"
+            className="px-6 py-2 border border-hallmark-dark-green text-hallmark-dark-green hover:bg-hallmark-dark-green hover:text-white transition-all duration-300 rounded-md text-sm font-medium"
           >
-            Explore All Solutions
+            All Solutions
           </button>
         </div>
       </div>
