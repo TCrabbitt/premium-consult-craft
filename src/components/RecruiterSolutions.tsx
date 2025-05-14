@@ -6,22 +6,22 @@ import { toast } from "@/hooks/use-toast";
 const RecruiterSolutions = () => {
   const solutions = [
     {
-      icon: <Search className="h-6 w-6 text-hallmark-green" />,
+      icon: <Search className="h-6 w-6 text-hallmark-green" strokeWidth={1.5} />,
       title: "Talent Acquisition",
       description: "Comprehensive strategies to attract top talent"
     },
     {
-      icon: <Users className="h-6 w-6 text-hallmark-green" />,
+      icon: <Users className="h-6 w-6 text-hallmark-green" strokeWidth={1.5} />,
       title: "Candidate Experience",
       description: "Optimized recruitment process for exceptional experiences"
     },
     {
-      icon: <Briefcase className="h-6 w-6 text-hallmark-green" />,
+      icon: <Briefcase className="h-6 w-6 text-hallmark-green" strokeWidth={1.5} />,
       title: "Employer Branding",
       description: "Build a strong employer brand that resonates"
     },
     {
-      icon: <Award className="h-6 w-6 text-hallmark-green" />,
+      icon: <Award className="h-6 w-6 text-hallmark-green" strokeWidth={1.5} />,
       title: "Recruitment Tech",
       description: "Cutting-edge technology for streamlined processes"
     }
@@ -50,7 +50,7 @@ const RecruiterSolutions = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
           {solutions.map((solution, index) => (
-            <Card key={index} className="border-0 shadow-sm hover:shadow-md transition-all bg-white p-6">
+            <Card key={index} className="border-l-4 border-hallmark-green/80 shadow-sm hover:shadow-md transition-all bg-white p-6">
               <div className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-hallmark-green/30 mb-4">
                 {solution.icon}
               </div>
