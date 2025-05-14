@@ -1,7 +1,7 @@
 
-import { ArrowRight, Briefcase, Search, Users, Award } from "lucide-react";
+import { ArrowRight, Search, Users, Award, Briefcase } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { toast } from "@/hooks/use-toast";
 
 const RecruiterSolutions = () => {
   const solutions = [
@@ -26,6 +26,13 @@ const RecruiterSolutions = () => {
       description: "Implement cutting-edge technology to streamline your recruitment processes."
     }
   ];
+
+  const handleLearnMore = () => {
+    toast({
+      title: "Feature coming soon!",
+      description: "This feature will be available in the next update.",
+    });
+  };
 
   return (
     <section id="recruiters" className="section-padding bg-white relative overflow-hidden">
@@ -52,20 +59,23 @@ const RecruiterSolutions = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-hallmark-dark">{solution.title}</h3>
               <p className="text-hallmark-neutral-gray mb-6 flex-grow">{solution.description}</p>
-              <a 
-                href="#" 
+              <button 
+                onClick={handleLearnMore}
                 className="inline-flex items-center font-medium text-hallmark-green hover:text-hallmark-blue transition-colors"
               >
                 Learn more <ArrowRight size={16} className="ml-1" />
-              </a>
+              </button>
             </Card>
           ))}
         </div>
 
         <div className="mt-12 text-center">
-          <Button variant="outline" className="border-hallmark-dark-green text-hallmark-dark-green hover:bg-hallmark-dark-green hover:text-white">
+          <button 
+            onClick={handleLearnMore}
+            className="px-6 py-3 border border-hallmark-dark-green text-hallmark-dark-green hover:bg-hallmark-dark-green hover:text-white transition-all duration-300 rounded-lg font-medium"
+          >
             Explore All Solutions
-          </Button>
+          </button>
         </div>
       </div>
     </section>
