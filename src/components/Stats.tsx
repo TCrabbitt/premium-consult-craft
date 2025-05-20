@@ -201,33 +201,33 @@ const Stats = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-hallmark-dark">
             Why Choose HWS
           </h2>
-          <h3 className="text-xl md:text-2xl font-display mb-8 bg-gradient-to-r from-hallmark-blue to-hallmark-green bg-clip-text text-transparent">
+          <h3 className="text-xl md:text-2xl font-display font-medium mb-8 text-hallmark-blue bg-gradient-to-r from-hallmark-blue to-hallmark-green bg-clip-text text-transparent">
             The Clear Choice for HR & Payroll Solutions
           </h3>
           
           <div className="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-            <div className="flex-1 bg-gradient-to-br from-white to-hallmark-off-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-hallmark-light-green/20 transform hover:-translate-y-1">
+            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100 transform hover:-translate-y-1">
               <div className="h-12 w-12 rounded-full bg-gradient-to-r from-hallmark-green to-hallmark-light-green flex items-center justify-center text-white mx-auto mb-4">
                 <span className="text-xl font-bold">1</span>
               </div>
               <h4 className="font-medium text-lg mb-3 text-hallmark-dark">Integration Expertise</h4>
-              <p className="text-sm text-hallmark-neutral-gray">Seamless connection with existing systems</p>
+              <p className="text-sm text-hallmark-neutral-gray">Seamlessly connect with your existing business systems.</p>
             </div>
             
-            <div className="flex-1 bg-gradient-to-br from-white to-hallmark-off-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-hallmark-light-blue/20 transform hover:-translate-y-1">
+            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100 transform hover:-translate-y-1">
               <div className="h-12 w-12 rounded-full bg-gradient-to-r from-hallmark-blue to-hallmark-light-blue flex items-center justify-center text-white mx-auto mb-4">
                 <span className="text-xl font-bold">2</span>
               </div>
               <h4 className="font-medium text-lg mb-3 text-hallmark-dark">Dedicated Support</h4>
-              <p className="text-sm text-hallmark-neutral-gray">Expert assistance always available</p>
+              <p className="text-sm text-hallmark-neutral-gray">Our experts are always available to assist you.</p>
             </div>
             
-            <div className="flex-1 bg-gradient-to-br from-white to-hallmark-off-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-hallmark-dark-blue/20 transform hover:-translate-y-1">
+            <div className="flex-1 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-100 transform hover:-translate-y-1">
               <div className="h-12 w-12 rounded-full bg-gradient-to-r from-hallmark-dark-blue to-hallmark-blue flex items-center justify-center text-white mx-auto mb-4">
                 <span className="text-xl font-bold">3</span>
               </div>
               <h4 className="font-medium text-lg mb-3 text-hallmark-dark">Customized Solutions</h4>
-              <p className="text-sm text-hallmark-neutral-gray">Tailored to your specific needs</p>
+              <p className="text-sm text-hallmark-neutral-gray">Tailored to your specific business requirements.</p>
             </div>
           </div>
         </div>

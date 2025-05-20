@@ -1,139 +1,58 @@
 
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Card } from "@/components/ui/card";
 
 const testimonials = [
   {
     id: 1,
-    content: "Hallmark transformed our talent acquisition process and helped us reduce hiring costs by 35% while improving quality of hire.",
+    quote: "The strategic insights provided by their team transformed our business operations and helped us achieve a 40% increase in revenue within just 8 months.",
     author: "Sarah Johnson",
-    position: "HR Director",
-    company: "TechCorp Inc.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&auto=format&fit=crop&q=80"
+    position: "CEO, TechVision Inc.",
+    company: "TechVision Inc."
   },
   {
     id: 2,
-    content: "Their payroll solutions streamlined our operations across multiple countries, ensuring 100% compliance and saving us countless hours.",
+    quote: "Working with this consulting team was a game-changer for our organization. Their process optimization strategies reduced our operational costs by 25%.",
     author: "Michael Chen",
-    position: "CFO",
-    company: "Global Logistics",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&auto=format&fit=crop&q=80"
+    position: "COO, Global Solutions",
+    company: "Global Solutions"
   },
   {
     id: 3,
-    content: "The implementation team was exceptional. They understood our unique challenges and delivered a tailored solution that exceeded expectations.",
+    quote: "The leadership development program they designed for our executive team has dramatically improved our decision-making process and team cohesion.",
     author: "Emma Rodriguez",
-    position: "Operations Manager",
-    company: "HealthPlus",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&auto=format&fit=crop&q=80"
+    position: "HR Director, Innovate Partners",
+    company: "Innovate Partners"
   }
 ];
 
 const Testimonials = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const handlePrev = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-      setTimeout(() => setIsAnimating(false), 500);
-    }
-  };
-
-  const handleNext = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-      setTimeout(() => setIsAnimating(false), 500);
-    }
-  };
-
-  // Auto advance testimonials
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [activeIndex]);
-
   return (
-    <section className="py-20 bg-gradient-to-br from-hallmark-dark-blue to-hallmark-dark-green text-white overflow-hidden">
-      <div className="container mx-auto px-6 relative">
-        <div className="max-w-lg mx-auto text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/30 text-white/90 text-sm mb-3">
-            <Star size={14} strokeWidth={1.5} />
-            <span>Client Success</span>
-          </div>
-          <h2 className="text-3xl font-display font-semibold mb-3">Success Stories</h2>
-          <p className="text-white/80 text-sm">
-            Real results from our valued partners
+    <section className="section-padding bg-consulting-soft-gray">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Client Success Stories</h2>
+          <p className="text-consulting-neutral-gray max-w-2xl mx-auto">
+            Hear from organizations that have transformed their businesses with our consulting expertise.
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden relative rounded-lg bg-white/5 backdrop-blur-sm p-10 min-h-[300px]">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={testimonial.id}
-                className={`absolute inset-0 flex flex-col md:flex-row items-center gap-10 p-10 transition-all duration-500 ease-in-out ${
-                  index === activeIndex ? "opacity-100 translate-x-0" : 
-                  index < activeIndex ? "opacity-0 -translate-x-full" : "opacity-0 translate-x-full"
-                }`}
-              >
-                <div className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-full overflow-hidden border-2 border-white/20">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.author} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-col flex-grow">
-                  <div className="flex mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={16} className="text-hallmark-light-green" fill="#68DA9E" strokeWidth={0} />
-                    ))}
-                  </div>
-                  <p className="text-lg mb-6 italic">"{testimonial.content}"</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-white/80">{testimonial.position}, {testimonial.company}</p>
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial) => (
+            <Card key={testimonial.id} className="p-8 bg-white border-none shadow-md hover:shadow-xl transition-shadow">
+              <div className="mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
               </div>
-            ))}
-          </div>
-
-          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  activeIndex === index ? "bg-white w-6" : "bg-white/40"
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
-
-          <button 
-            onClick={handlePrev} 
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-5 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft size={24} strokeWidth={1.5} />
-          </button>
-          <button 
-            onClick={handleNext} 
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-5 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={24} strokeWidth={1.5} />
-          </button>
+              <blockquote className="mb-6">
+                <p className="italic text-consulting-dark-purple">{testimonial.quote}</p>
+              </blockquote>
+              <div>
+                <p className="font-semibold">{testimonial.author}</p>
+                <p className="text-consulting-neutral-gray text-sm">{testimonial.position}</p>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

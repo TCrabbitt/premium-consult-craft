@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, ChevronDown, ChevronUp, FileSearch, Briefcase, Users, Award, BookOpen, FileText } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, ChevronUp, FileSearch, Briefcase, Users, Award, BookOpen, FileText, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
-import { toast } from "@/hooks/use-toast";
 
 // FAQ item type definition
 interface FAQItem {
@@ -40,13 +39,6 @@ const SolutionsPage = () => {
   // Toggle FAQ item
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
-  };
-
-  const handleMoreInfo = () => {
-    toast({
-      title: "More information",
-      description: "Additional details will be available soon!",
-    });
   };
 
   // Sample FAQ data
@@ -174,254 +166,292 @@ const SolutionsPage = () => {
           </div>
         </section>
 
-        {/* The Challenges Modern HR Teams Face - IMPROVED DESIGN */}
-        <section className="py-12 md:py-16 bg-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-hallmark-off-white/50 to-white/0 opacity-80"></div>
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-10">
-              <div className="inline-block bg-gradient-to-r from-hallmark-light-green/20 to-hallmark-dark-blue/20 px-4 py-1.5 rounded-full text-sm font-medium uppercase tracking-wider text-hallmark-dark-blue mb-4">
-                MODERN HR CHALLENGES
-              </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-3 text-hallmark-dark">The Challenges Modern HR Teams Face</h2>
-              <p className="text-hallmark-neutral-gray max-w-2xl mx-auto">
-                Today's businesses navigate an increasingly complex workforce landscape
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="bg-gradient-to-br from-hallmark-off-white to-white rounded-xl p-8 shadow-xl">
-                <div className="space-y-6">
-                  <div className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1">
-                    <div className="mt-1 mr-4 w-8 h-8 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
-                      <Check size={18} className="text-hallmark-green" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-hallmark-dark mb-1">Finding and retaining top talent</h3>
-                      <p className="text-hallmark-neutral-gray text-sm">Competing in increasingly tight and specialized labor markets</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1">
-                    <div className="mt-1 mr-4 w-8 h-8 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
-                      <Check size={18} className="text-hallmark-green" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-hallmark-dark mb-1">Managing compliance requirements</h3>
-                      <p className="text-hallmark-neutral-gray text-sm">Navigating complex and constantly changing regulatory landscapes</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1">
-                    <div className="mt-1 mr-4 w-8 h-8 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
-                      <Check size={18} className="text-hallmark-green" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-hallmark-dark mb-1">Building inclusive cultures</h3>
-                      <p className="text-hallmark-neutral-gray text-sm">Creating cohesion across diverse and distributed teams</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1">
-                    <div className="mt-1 mr-4 w-8 h-8 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
-                      <Check size={18} className="text-hallmark-green" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-hallmark-dark mb-1">Developing leadership capabilities</h3>
-                      <p className="text-hallmark-neutral-gray text-sm">Preparing leaders for future organizational needs and challenges</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="relative">
-                <div className="absolute -left-10 -top-10 w-40 h-40 bg-hallmark-light-green/10 rounded-full blur-2xl"></div>
-                <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-hallmark-blue/10 rounded-full blur-2xl"></div>
-                <div className="relative rounded-xl overflow-hidden shadow-2xl border border-hallmark-off-white">
-                  <img 
-                    src="https://images.unsplash.com/photo-1483058712412-4245e9b90334" 
-                    alt="HR Challenges" 
-                    className="w-full h-full object-cover rounded-xl" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-hallmark-dark-blue/50 to-transparent flex items-end">
-                    <div className="p-6 text-white">
-                      <h3 className="text-xl font-semibold mb-2">We solve these challenges</h3>
-                      <p className="text-white/80 text-sm">Our solutions are designed to address these exact pain points</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Solutions Section - IMPROVED DESIGN */}
-        <section className="py-12 md:py-16 relative overflow-hidden bg-gradient-to-b from-white to-hallmark-off-white/30">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-hallmark-light-green/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-hallmark-blue/10 rounded-full blur-3xl"></div>
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-12">
-              <div className="inline-block bg-gradient-to-r from-hallmark-green/20 to-hallmark-blue/20 px-4 py-1.5 rounded-full text-sm font-medium uppercase tracking-wider text-hallmark-dark-blue mb-4">
-                OUR SOLUTIONS
-              </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-hallmark-dark">Comprehensive HR Solutions</h2>
-              <p className="text-hallmark-neutral-gray max-w-2xl mx-auto">
-                Designed to address your most pressing HR challenges and transform your workforce
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: <FileSearch className="text-white" size={24} />,
-                  title: "Talent Acquisition",
-                  description: "Modernize your recruitment approach",
-                  color: "from-hallmark-dark-blue to-hallmark-blue",
-                  features: ["Employer branding", "Process optimization", "Candidate experience", "Tech implementation"]
-                },
-                {
-                  icon: <Users className="text-white" size={24} />,
-                  title: "Employee Engagement",
-                  description: "Build a thriving workplace culture",
-                  color: "from-hallmark-dark-green to-hallmark-green",
-                  features: ["Engagement assessment", "Culture transformation", "Recognition programs", "Retention strategy"]
-                },
-                {
-                  icon: <Briefcase className="text-white" size={24} />,
-                  title: "HR Transformation",
-                  description: "Modernize HR operations",
-                  color: "from-hallmark-dark-blue to-hallmark-blue",
-                  features: ["Process optimization", "HR technology roadmap", "Service delivery model", "Change management"]
-                },
-                {
-                  icon: <Award className="text-white" size={24} />,
-                  title: "Leadership Development",
-                  description: "Build your leadership pipeline",
-                  color: "from-hallmark-dark-green to-hallmark-green",
-                  features: ["Leadership assessment", "High-potential development", "Succession planning", "Executive coaching"]
-                },
-                {
-                  icon: <FileSearch className="text-white" size={24} />,
-                  title: "Workforce Analytics",
-                  description: "Data-driven HR decisions",
-                  color: "from-hallmark-dark-blue to-hallmark-blue",
-                  features: ["HR metrics framework", "Predictive analytics", "Data visualization", "Strategic insights"]
-                },
-                {
-                  icon: <Users className="text-white" size={24} />,
-                  title: "Diversity & Inclusion",
-                  description: "Build inclusive workplaces",
-                  color: "from-hallmark-dark-green to-hallmark-green",
-                  features: ["DEI assessment", "Inclusive leadership", "Belonging initiatives", "Accountability measures"]
-                }
-              ].map((solution, index) => (
-                <Card key={index} className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group h-full">
-                  <div className={`bg-gradient-to-r ${solution.color} p-5 relative`}>
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mt-10 -mr-10"></div>
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
-                        {solution.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white">{solution.title}</h3>
-                        <p className="text-white/80 text-sm">{solution.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <CardContent className="p-5">
-                    <ul className="space-y-3">
-                      {solution.features.map((feature, i) => (
-                        <li key={i} className="flex items-center">
-                          <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
-                          <span className="text-hallmark-dark text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <button 
-                      className="mt-4 text-hallmark-dark-blue text-sm hover:text-hallmark-green transition-colors flex items-center"
-                      onClick={handleMoreInfo}
-                    >
-                      Learn more <ArrowRight size={14} className="ml-1" />
-                    </button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            
-            <div className="text-center mt-10">
-              <Button 
-                className="bg-gradient-to-r from-hallmark-dark-green to-hallmark-dark-blue text-white hover:opacity-90 transition-opacity px-6 py-2"
-                onClick={handleMoreInfo}
-              >
-                Explore All Our Solutions
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Clients Choose Us Section - NEW STANDALONE SECTION */}
-        <section className="py-12 md:py-16 bg-hallmark-dark-blue text-white">
+        {/* State the Problem Section */}
+        <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-10">
-              <div className="inline-block bg-white/20 px-4 py-1.5 rounded-full text-sm font-medium uppercase tracking-wider text-white mb-4">
-                CLIENT TRUST
-              </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Why Clients Choose Us</h2>
-              <p className="text-white/80 max-w-2xl mx-auto">
-                Delivering exceptional results and building lasting partnerships with our clients
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: <Check size={24} />,
-                  title: "Proven Track Record",
-                  description: "Over 200+ successful client engagements across industries with measurable results"
-                },
-                {
-                  icon: <Users size={24} />,
-                  title: "Expert Team",
-                  description: "Certified HR professionals with deep industry expertise and practical experience"
-                },
-                {
-                  icon: <FileSearch size={24} />,
-                  title: "Data-Driven Approach",
-                  description: "Evidence-based methodologies that deliver measurable business outcomes"
-                },
-                {
-                  icon: <Award size={24} />,
-                  title: "Customized Solutions",
-                  description: "Tailored strategies designed specifically for your unique business needs"
-                },
-                {
-                  icon: <Briefcase size={24} />,
-                  title: "Ongoing Support",
-                  description: "Comprehensive implementation assistance ensuring sustainable results"
-                },
-                {
-                  icon: <BookOpen size={24} />,
-                  title: "Knowledge Transfer",
-                  description: "We build your internal capabilities while solving immediate challenges"
-                }
-              ].map((reason, index) => (
-                <div key={index} className="bg-hallmark-dark-blue/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="w-12 h-12 rounded-full bg-hallmark-green/20 flex items-center justify-center mb-4">
-                    {reason.icon}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark">The Challenges Modern HR Teams Face</h2>
+                <p className="text-gray-700 mb-6">
+                  Today's businesses navigate an increasingly complex workforce landscape with challenges that traditional HR approaches struggle to address effectively.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 w-6 h-6 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
+                      <Check size={16} className="text-hallmark-green" />
+                    </div>
+                    <p className="text-gray-700">Finding and retaining top talent in competitive markets</p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-                  <p className="text-white/70">{reason.description}</p>
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 w-6 h-6 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
+                      <Check size={16} className="text-hallmark-green" />
+                    </div>
+                    <p className="text-gray-700">Managing increasingly complex compliance requirements</p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 w-6 h-6 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
+                      <Check size={16} className="text-hallmark-green" />
+                    </div>
+                    <p className="text-gray-700">Building inclusive cultures across distributed teams</p>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mt-1 mr-4 w-6 h-6 flex items-center justify-center rounded-full bg-hallmark-light-green/20 flex-shrink-0">
+                      <Check size={16} className="text-hallmark-green" />
+                    </div>
+                    <p className="text-gray-700">Developing future-ready leadership capabilities</p>
+                  </div>
                 </div>
-              ))}
+              </div>
+              <div className="bg-hallmark-off-white p-8 rounded-lg shadow-premium">
+                <div className="flex items-center justify-center h-full">
+                  <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334" alt="HR Challenges" className="rounded-lg max-h-80 object-cover w-full" />
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Our Solutions Section */}
+        <section className="py-12 md:py-16 bg-hallmark-off-white">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark text-center">Our Solutions</h2>
+            <p className="text-center text-gray-700 max-w-3xl mx-auto mb-12">
+              We offer comprehensive consulting services designed to address your most pressing HR challenges and transform your workforce into a strategic advantage.
+            </p>
             
-            <div className="mt-10 text-center">
-              <Button 
-                className="bg-white text-hallmark-dark-blue hover:bg-white/90 transition-colors"
-                onClick={handleMoreInfo}
-              >
-                See Our Client Success Stories
-              </Button>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="shadow-premium hover:shadow-xl transition-all duration-300 border-t-4 border-t-hallmark-blue">
+                <CardHeader>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-hallmark-light-blue/20 mb-4">
+                    <FileSearch size={24} className="text-hallmark-blue" />
+                  </div>
+                  <CardTitle>Talent Acquisition Strategy</CardTitle>
+                  <CardDescription>Modernize your recruitment approach</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Employer brand development</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Recruitment process optimization</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Candidate experience enhancement</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Technology implementation</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-premium hover:shadow-xl transition-all duration-300 border-t-4 border-t-hallmark-green">
+                <CardHeader>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-hallmark-light-green/20 mb-4">
+                    <Users size={24} className="text-hallmark-green" />
+                  </div>
+                  <CardTitle>Employee Engagement</CardTitle>
+                  <CardDescription>Build a thriving workplace culture</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Engagement assessment</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Culture transformation</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Recognition program design</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Retention strategy development</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-premium hover:shadow-xl transition-all duration-300 border-t-4 border-t-hallmark-blue">
+                <CardHeader>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-hallmark-light-blue/20 mb-4">
+                    <Briefcase size={24} className="text-hallmark-blue" />
+                  </div>
+                  <CardTitle>HR Transformation</CardTitle>
+                  <CardDescription>Modernize HR operations</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Process optimization</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>HR technology roadmap</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Service delivery model design</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Change management</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-premium hover:shadow-xl transition-all duration-300 border-t-4 border-t-hallmark-green">
+                <CardHeader>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-hallmark-light-green/20 mb-4">
+                    <Award size={24} className="text-hallmark-green" />
+                  </div>
+                  <CardTitle>Leadership Development</CardTitle>
+                  <CardDescription>Build your leadership pipeline</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Leadership assessment</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>High-potential development</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Succession planning</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Executive coaching</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-premium hover:shadow-xl transition-all duration-300 border-t-4 border-t-hallmark-blue">
+                <CardHeader>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-hallmark-light-blue/20 mb-4">
+                    <FileSearch size={24} className="text-hallmark-blue" />
+                  </div>
+                  <CardTitle>Workforce Analytics</CardTitle>
+                  <CardDescription>Data-driven HR decisions</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>HR metrics framework</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Predictive workforce analytics</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Data visualization</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Strategic insights reporting</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-premium hover:shadow-xl transition-all duration-300 border-t-4 border-t-hallmark-green">
+                <CardHeader>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-hallmark-light-green/20 mb-4">
+                    <Users size={24} className="text-hallmark-green" />
+                  </div>
+                  <CardTitle>Diversity & Inclusion</CardTitle>
+                  <CardDescription>Build inclusive workplaces</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>DEI assessment & strategy</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Inclusive leadership training</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Belonging initiatives</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check size={16} className="mr-2 text-hallmark-green flex-shrink-0" />
+                      <span>Measurement & accountability</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Why HWS Section */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="order-2 md:order-1">
+                <div className="bg-gradient-to-br from-hallmark-dark-green to-hallmark-dark-blue p-8 rounded-lg text-white relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10">
+                    <img 
+                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
+                      alt="Background Pattern" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-semibold mb-6">Why clients choose us:</h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <Check size={20} className="mr-3 text-hallmark-light-green flex-shrink-0 mt-1" />
+                        <p>Proven track record with over 200+ successful client engagements across industries</p>
+                      </li>
+                      <li className="flex items-start">
+                        <Check size={20} className="mr-3 text-hallmark-light-green flex-shrink-0 mt-1" />
+                        <p>Team of certified HR professionals with deep industry expertise</p>
+                      </li>
+                      <li className="flex items-start">
+                        <Check size={20} className="mr-3 text-hallmark-light-green flex-shrink-0 mt-1" />
+                        <p>Data-driven approach that delivers measurable business outcomes</p>
+                      </li>
+                      <li className="flex items-start">
+                        <Check size={20} className="mr-3 text-hallmark-light-green flex-shrink-0 mt-1" />
+                        <p>Customized solutions tailored to your specific business needs</p>
+                      </li>
+                      <li className="flex items-start">
+                        <Check size={20} className="mr-3 text-hallmark-light-green flex-shrink-0 mt-1" />
+                        <p>Ongoing support that ensures sustainable implementation</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <h2 className="text-3xl font-display font-bold mb-4 text-hallmark-dark">Why Choose Hallmark</h2>
+                <p className="text-gray-700 mb-6">
+                  We bring a unique combination of deep HR expertise, business acumen, and proven methodologies that drive tangible results. Our consultants average 15+ years of experience in their fields and are committed to your organization's success.
+                </p>
+                <p className="text-gray-700">
+                  Unlike traditional consulting firms, we focus on building your internal capabilities while solving immediate challenges. This approach ensures sustainable improvements that continue to deliver value long after our engagement ends.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -503,56 +533,26 @@ const SolutionsPage = () => {
           </div>
         </section>
 
-        {/* Key Metrics We Impact - IMPROVED DESIGN */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-white to-hallmark-off-white">
+        {/* Key Metrics Section */}
+        <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
-              <div className="inline-block bg-gradient-to-r from-hallmark-light-green/20 to-hallmark-blue/20 px-4 py-1.5 rounded-full text-sm font-medium uppercase tracking-wider text-hallmark-dark-blue mb-4">
-                MEASURABLE IMPACT
+            <h2 className="text-3xl font-display font-bold mb-8 text-hallmark-dark text-center">Key Metrics We Impact</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="bg-hallmark-off-white p-6 rounded-lg text-center shadow-premium hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-bold text-hallmark-dark-blue mb-2">40%</div>
+                <p className="text-gray-700">Average Reduction in Time-to-Hire</p>
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-hallmark-dark">Key Metrics We Impact</h2>
-              <p className="text-hallmark-neutral-gray max-w-2xl mx-auto">
-                Our solutions deliver tangible, measurable improvements to your HR operations
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-              {[
-                { value: "40%", label: "Average Reduction in Time-to-Hire", color: "from-hallmark-blue/20 to-hallmark-dark-blue/20", textColor: "text-hallmark-dark-blue" },
-                { value: "25%", label: "Improvement in Employee Retention", color: "from-hallmark-green/20 to-hallmark-dark-green/20", textColor: "text-hallmark-dark-green" },
-                { value: "35%", label: "Increase in HR Team Productivity", color: "from-hallmark-blue/20 to-hallmark-dark-blue/20", textColor: "text-hallmark-dark-blue" },
-                { value: "20%", label: "Reduction in HR Operational Costs", color: "from-hallmark-green/20 to-hallmark-dark-green/20", textColor: "text-hallmark-dark-green" }
-              ].map((metric, index) => (
-                <div key={index} className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br rounded-xl blur-md opacity-70 transform transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"
-                    style={{ background: `linear-gradient(to bottom right, ${metric.color.split('from-')[1].split(' ')[0].replace('/20', '')}, ${metric.color.split('to-')[1].split(' ')[0].replace('/20', '')})` }}>
-                  </div>
-                  <div className="bg-white rounded-xl p-6 relative z-10 h-full flex flex-col items-center justify-center text-center shadow-xl transform transition-transform duration-300 group-hover:-translate-y-1">
-                    <div className={`text-4xl md:text-5xl font-bold ${metric.textColor} mb-2`}>{metric.value}</div>
-                    <p className="text-hallmark-neutral-gray text-sm">{metric.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                {[
-                  { icon: <FileText size={24} />, title: "Reduced Risk", description: "Minimize compliance risks and penalties through improved processes" },
-                  { icon: <Users size={24} />, title: "Employee Satisfaction", description: "Enhanced workforce experience leading to better engagement" },
-                  { icon: <FileSearch size={24} />, title: "Data Visibility", description: "Comprehensive insights enabling better decision-making" },
-                  { icon: <Briefcase size={24} />, title: "Faster Onboarding", description: "Accelerated time-to-productivity for new hires" }
-                ].map((impact, index) => (
-                  <div key={index} className={`p-6 group hover:bg-gradient-to-br hover:from-hallmark-off-white hover:to-white transition-all duration-300 ${index < 3 ? 'border-r border-gray-100' : ''}`}>
-                    <div className="w-12 h-12 rounded-full bg-hallmark-light-green/20 flex items-center justify-center mb-4 group-hover:bg-hallmark-green/30 transition-colors">
-                      <div className="text-hallmark-green">
-                        {impact.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2 text-hallmark-dark">{impact.title}</h3>
-                    <p className="text-hallmark-neutral-gray">{impact.description}</p>
-                  </div>
-                ))}
+              <div className="bg-hallmark-off-white p-6 rounded-lg text-center shadow-premium hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-bold text-hallmark-dark-green mb-2">25%</div>
+                <p className="text-gray-700">Improvement in Employee Retention</p>
+              </div>
+              <div className="bg-hallmark-off-white p-6 rounded-lg text-center shadow-premium hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-bold text-hallmark-dark-blue mb-2">35%</div>
+                <p className="text-gray-700">Increase in HR Team Productivity</p>
+              </div>
+              <div className="bg-hallmark-off-white p-6 rounded-lg text-center shadow-premium hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-bold text-hallmark-dark-green mb-2">20%</div>
+                <p className="text-gray-700">Reduction in HR Operational Costs</p>
               </div>
             </div>
           </div>
