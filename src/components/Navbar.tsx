@@ -31,24 +31,6 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const solutionItems = [
-    { 
-      name: "Talent Acquisition", 
-      path: "/solutions/talent-acquisition",
-      description: "Transform your hiring process with strategic talent acquisition solutions"
-    },
-    { 
-      name: "Employee Engagement", 
-      path: "/solutions/employee-engagement",
-      description: "Build a thriving workplace culture where employees are motivated and committed"
-    },
-    { 
-      name: "Leadership Development", 
-      path: "/solutions/leadership-development",
-      description: "Cultivate exceptional leaders who inspire teams and drive results"
-    }
-  ];
-
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -73,40 +55,33 @@ const Navbar = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="center" 
-              className="w-80 bg-white border border-gray-100 shadow-xl mt-2 p-2"
+              className="w-48 bg-white border border-gray-100 shadow-xl mt-2"
               sideOffset={8}
             >
-              <div className="py-2">
-                <div className="px-4 py-2 border-b border-gray-100 mb-2">
-                  <h3 className="font-semibold text-hallmark-dark text-sm">Our Solutions</h3>
-                  <p className="text-xs text-gray-600 mt-1">Comprehensive workforce management solutions</p>
-                </div>
-                {solutionItems.map((item) => (
-                  <DropdownMenuItem key={item.path} asChild className="p-0">
-                    <Link 
-                      to={item.path}
-                      className="w-full px-4 py-3 text-left hover:bg-hallmark-off-white hover:text-hallmark-dark-green transition-colors cursor-pointer rounded-md block group"
-                    >
-                      <div>
-                        <div className="font-medium text-hallmark-dark group-hover:text-hallmark-dark-green transition-colors">
-                          {item.name}
-                        </div>
-                        <div className="text-sm text-gray-600 mt-1 leading-relaxed">
-                          {item.description}
-                        </div>
-                      </div>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-                <div className="border-t border-gray-100 mt-2 pt-3 px-4">
-                  <Link 
-                    to="/solutions" 
-                    className="text-sm text-hallmark-dark-green hover:text-hallmark-green font-medium transition-colors"
-                  >
-                    View all solutions →
-                  </Link>
-                </div>
-              </div>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/solution1"
+                  className="w-full px-4 py-2 text-left hover:bg-hallmark-off-white transition-colors cursor-pointer"
+                >
+                  Solution 1
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/solution2"
+                  className="w-full px-4 py-2 text-left hover:bg-hallmark-off-white transition-colors cursor-pointer"
+                >
+                  Solution 2
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/solution3"
+                  className="w-full px-4 py-2 text-left hover:bg-hallmark-off-white transition-colors cursor-pointer"
+                >
+                  Solution 3
+                </Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to="/industries" className="nav-link">Industries</Link>
@@ -138,18 +113,28 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           <div className="border-b border-gray-100 pb-4">
             <span className="font-medium text-hallmark-dark mb-3 block">Solutions</span>
-            <div className="space-y-3">
-              {solutionItems.map((item) => (
-                <Link 
-                  key={item.path}
-                  to={item.path} 
-                  className="block py-2 px-3 rounded-md hover:bg-hallmark-off-white hover:text-hallmark-dark-green transition-colors" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <div className="font-medium">{item.name}</div>
-                  <div className="text-sm text-gray-600 mt-1">{item.description}</div>
-                </Link>
-              ))}
+            <div className="space-y-2">
+              <Link 
+                to="/solution1" 
+                className="block py-2 px-3 rounded-md hover:bg-hallmark-off-white transition-colors" 
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Solution 1
+              </Link>
+              <Link 
+                to="/solution2" 
+                className="block py-2 px-3 rounded-md hover:bg-hallmark-off-white transition-colors" 
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Solution 2
+              </Link>
+              <Link 
+                to="/solution3" 
+                className="block py-2 px-3 rounded-md hover:bg-hallmark-off-white transition-colors" 
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Solution 3
+              </Link>
             </div>
           </div>
           <Link to="/industries" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
