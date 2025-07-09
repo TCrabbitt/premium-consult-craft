@@ -137,7 +137,7 @@ const LeadershipDevelopmentPage = () => {
               <ArrowRight size={16} className="ml-2" />
             </Button>
           </div>
-        </Section>
+        </section>
 
         <Contact />
       </main>
