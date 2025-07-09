@@ -32,9 +32,21 @@ const Navbar = () => {
   };
 
   const solutionItems = [
-    { name: "Talent Acquisition", path: "/solutions/talent-acquisition" },
-    { name: "Employee Engagement", path: "/solutions/employee-engagement" },
-    { name: "Leadership Development", path: "/solutions/leadership-development" }
+    { 
+      name: "Talent Acquisition", 
+      path: "/solutions/talent-acquisition",
+      description: "Transform your hiring process with strategic talent acquisition solutions"
+    },
+    { 
+      name: "Employee Engagement", 
+      path: "/solutions/employee-engagement",
+      description: "Build a thriving workplace culture where employees are motivated and committed"
+    },
+    { 
+      name: "Leadership Development", 
+      path: "/solutions/leadership-development",
+      description: "Cultivate exceptional leaders who inspire teams and drive results"
+    }
   ];
 
   return (
@@ -54,25 +66,47 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="nav-link flex items-center gap-1 hover:text-hallmark-dark-green transition-colors">
+              <button className="nav-link flex items-center gap-1 hover:text-hallmark-dark-green transition-colors group">
                 Solutions
                 <ChevronDown size={16} className="transition-transform group-data-[state=open]:rotate-180" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="center" 
-              className="w-56 bg-white border border-gray-100 shadow-premium mt-2"
+              className="w-80 bg-white border border-gray-100 shadow-xl mt-2 p-2"
+              sideOffset={8}
             >
-              {solutionItems.map((item) => (
-                <DropdownMenuItem key={item.path} asChild>
+              <div className="py-2">
+                <div className="px-4 py-2 border-b border-gray-100 mb-2">
+                  <h3 className="font-semibold text-hallmark-dark text-sm">Our Solutions</h3>
+                  <p className="text-xs text-gray-600 mt-1">Comprehensive workforce management solutions</p>
+                </div>
+                {solutionItems.map((item) => (
+                  <DropdownMenuItem key={item.path} asChild className="p-0">
+                    <Link 
+                      to={item.path}
+                      className="w-full px-4 py-3 text-left hover:bg-hallmark-off-white hover:text-hallmark-dark-green transition-colors cursor-pointer rounded-md block group"
+                    >
+                      <div>
+                        <div className="font-medium text-hallmark-dark group-hover:text-hallmark-dark-green transition-colors">
+                          {item.name}
+                        </div>
+                        <div className="text-sm text-gray-600 mt-1 leading-relaxed">
+                          {item.description}
+                        </div>
+                      </div>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+                <div className="border-t border-gray-100 mt-2 pt-3 px-4">
                   <Link 
-                    to={item.path}
-                    className="w-full px-4 py-3 text-hallmark-dark hover:bg-hallmark-off-white hover:text-hallmark-dark-green transition-colors cursor-pointer"
+                    to="/solutions" 
+                    className="text-sm text-hallmark-dark-green hover:text-hallmark-green font-medium transition-colors"
                   >
-                    {item.name}
+                    View all solutions →
                   </Link>
-                </DropdownMenuItem>
-              ))}
+                </div>
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to="/industries" className="nav-link">Industries</Link>
@@ -102,17 +136,18 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-          <div className="border-b border-gray-100 pb-2">
-            <span className="font-medium text-hallmark-dark">Solutions</span>
-            <div className="ml-4 mt-2 space-y-2">
+          <div className="border-b border-gray-100 pb-4">
+            <span className="font-medium text-hallmark-dark mb-3 block">Solutions</span>
+            <div className="space-y-3">
               {solutionItems.map((item) => (
                 <Link 
                   key={item.path}
                   to={item.path} 
-                  className="block py-1 text-hallmark-neutral-gray hover:text-hallmark-dark-green" 
+                  className="block py-2 px-3 rounded-md hover:bg-hallmark-off-white hover:text-hallmark-dark-green transition-colors" 
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item.name}
+                  <div className="font-medium">{item.name}</div>
+                  <div className="text-sm text-gray-600 mt-1">{item.description}</div>
                 </Link>
               ))}
             </div>
