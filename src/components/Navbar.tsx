@@ -1,8 +1,14 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,6 +31,12 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const solutionItems = [
+    { name: "Talent Acquisition", path: "/solutions/talent-acquisition" },
+    { name: "Employee Engagement", path: "/solutions/employee-engagement" },
+    { name: "Leadership Development", path: "/solutions/leadership-development" }
+  ];
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -40,7 +52,29 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/solutions" className="nav-link">Solutions</Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="nav-link flex items-center gap-1 hover:text-hallmark-dark-green transition-colors">
+                Solutions
+                <ChevronDown size={16} className="transition-transform group-data-[state=open]:rotate-180" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent 
+              align="center" 
+              className="w-56 bg-white border border-gray-100 shadow-premium mt-2"
+            >
+              {solutionItems.map((item) => (
+                <DropdownMenuItem key={item.path} asChild>
+                  <Link 
+                    to={item.path}
+                    className="w-full px-4 py-3 text-hallmark-dark hover:bg-hallmark-off-white hover:text-hallmark-dark-green transition-colors cursor-pointer"
+                  >
+                    {item.name}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Link to="/industries" className="nav-link">Industries</Link>
           <Link to="/about" className="nav-link">About Us</Link>
           <Link to="/#contact" className="nav-link">Contact</Link>
@@ -68,7 +102,21 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-          <Link to="/solutions" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
+          <div className="border-b border-gray-100 pb-2">
+            <span className="font-medium text-hallmark-dark">Solutions</span>
+            <div className="ml-4 mt-2 space-y-2">
+              {solutionItems.map((item) => (
+                <Link 
+                  key={item.path}
+                  to={item.path} 
+                  className="block py-1 text-hallmark-neutral-gray hover:text-hallmark-dark-green" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link to="/industries" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Industries</Link>
           <Link to="/about" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
           <Link to="/#contact" className="py-2 border-b border-gray-100" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>

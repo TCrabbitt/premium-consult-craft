@@ -8,6 +8,9 @@ import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import SolutionsPage from "./pages/SolutionsPage";
 import IndustriesPage from "./pages/IndustriesPage";
+import TalentAcquisitionPage from "./pages/TalentAcquisitionPage";
+import EmployeeEngagementPage from "./pages/EmployeeEngagementPage";
+import LeadershipDevelopmentPage from "./pages/LeadershipDevelopmentPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/solutions/talent-acquisition" element={<TalentAcquisitionPage />} />
+          <Route path="/solutions/employee-engagement" element={<EmployeeEngagementPage />} />
+          <Route path="/solutions/leadership-development" element={<LeadershipDevelopmentPage />} />
           <Route path="/industries" element={<IndustriesPage />} />
           <Route path="/blog" element={<NotFound />} /> {/* Temporary blog route that points to NotFound */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
