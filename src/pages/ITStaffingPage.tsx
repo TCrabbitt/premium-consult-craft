@@ -143,36 +143,52 @@ const ITStaffingPage = () => {
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-hallmark-dark-blue via-hallmark-blue to-hallmark-light-blue text-white py-24 relative overflow-hidden">
+        <section className="bg-gradient-to-r from-hallmark-dark-blue via-hallmark-blue to-hallmark-light-blue text-white py-32 relative overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-              <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
-              <div className="absolute bottom-20 right-10 w-40 h-40 bg-hallmark-green/20 rounded-full blur-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-full opacity-15">
+              <div className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute bottom-20 right-10 w-40 h-40 bg-hallmark-green/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-white/5 rounded-full blur-3xl"></div>
             </div>
           </div>
           <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <div className="inline-flex items-center bg-white/15 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium mb-6">
-                <Code className="h-4 w-4 mr-2" />
-                IT Staffing Solutions
+            <div className="max-w-5xl mx-auto text-center space-y-10">
+              <div className="inline-flex items-center bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm rounded-full px-8 py-4 text-base font-semibold mb-8 border border-white/20">
+                <span className="w-3 h-3 bg-hallmark-green rounded-full mr-3 animate-pulse"></span>
+                Solution 2 • IT Staffing Solutions
               </div>
-              <h1 className="text-5xl lg:text-6xl font-display font-bold leading-tight">
-                HWS India - Your Trusted and
-                <span className="bg-gradient-to-r from-hallmark-light-green to-hallmark-green bg-clip-text text-transparent"> Future-Ready</span>
-                <br />Workforce Partner
+              <h1 className="text-6xl lg:text-7xl font-display font-bold leading-tight">
+                <span className="block text-white/90 text-2xl lg:text-3xl font-medium mb-4">Next-Gen IT Workforce</span>
+                Your Trusted
+                <span className="bg-gradient-to-r from-hallmark-light-green via-white to-hallmark-green bg-clip-text text-transparent block mt-2"> Future-Ready</span>
+                <span className="block mt-2">Workforce Partner</span>
               </h1>
-              <p className="text-xl lg:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Our staffing solutions are tailored to meet evolving business needs with speed, precision, and cost-efficiency.
+              <p className="text-xl lg:text-2xl opacity-95 leading-relaxed max-w-4xl mx-auto font-light">
+                Our staffing solutions are tailored to meet evolving business needs with speed, precision, and cost-efficiency across global markets.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-                <Button size="lg" className="bg-white text-hallmark-dark-blue hover:bg-white/90 font-semibold text-lg px-8 py-4">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-16">
+                <Button size="lg" className="bg-white text-hallmark-dark-blue hover:bg-white/95 hover:scale-105 font-semibold text-lg px-10 py-5 shadow-2xl transition-all duration-300">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4">
+                <Button size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/15 hover:border-white/60 text-lg px-10 py-5 backdrop-blur-sm transition-all duration-300">
                   Explore Solutions
                 </Button>
+              </div>
+              <div className="mt-16 flex items-center justify-center space-x-8 text-white/80">
+                <div className="flex items-center space-x-2">
+                  <Code className="h-5 w-5 text-hallmark-green" />
+                  <span className="text-sm font-medium">AI-Driven Matching</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Monitor className="h-5 w-5 text-hallmark-green" />
+                  <span className="text-sm font-medium">48-72hr Onboarding</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Target className="h-5 w-5 text-hallmark-green" />
+                  <span className="text-sm font-medium">100+ Clients</span>
+                </div>
               </div>
             </div>
           </div>
